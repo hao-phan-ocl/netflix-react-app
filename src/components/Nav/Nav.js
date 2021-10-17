@@ -1,13 +1,21 @@
-import React from 'react';
-import logo from '../Netflix_Logo_RGB.png';
+import React, { useState } from 'react';
+import logo from './Netflix_Logo_RGB.png';
 import { Link } from 'react-router-dom';
 import { AccountBox, ArrowDropDown, ArrowDropUp, Search } from '@material-ui/icons';
+import './Nav.scss';
 
 export default function Nav() {
+    const [atTopLevel, setAtTopLevel] = useState(false);
+    
+    window.onscroll = () => {
+        setAtTopLevel(window.pageYOffset === 0 ? true : false)
+        // return () => (window.onscroll = null);
+    }
+
     return (
         <header>
-            <div className="navbar fixed-top navbar-dark bg-dark">
-                <div className="container-md">
+            <div className={atTopLevel ? "navbar fixed-top px-5" : "navbar fixed-top bg-black px-5"}>
+                <div className="container-fluid">
                     <div className="nav-left">
                         <Link to="/"><img src={logo} alt="Netflix Logo" className="logo"/></Link>
                         <ul className="nav-links">
@@ -26,7 +34,6 @@ export default function Nav() {
                         </ul>
                     </div>
                     <div className="nav-right">
-                        {/* <input className="form-control me-2 input-sm" type="text" placeholder="Search" /> */}
                         <Search className="icon" />
                         <div className="account-box">
                             <AccountBox />
