@@ -35,10 +35,6 @@ export default function Nav() {
                         {/* <Link to="/"><img src={logo} alt="Netflix Logo" className="logo"/></Link> */}
                         <div className="navigation">
                             <ul className="navigation-large">
-                                {/* <li>Home</li>
-                                <li>TV Shows</li>
-                                <li>Movies</li>
-                                <li>My List</li> */}
                                 {itemList}
                             </ul>
                             <ul className="navigation-small">
@@ -47,11 +43,7 @@ export default function Nav() {
                                 <div className="nav-small-wrapper">
                                     <ArrowDropUp />
                                     <ul className="nav-small-wrapper-content">
-                                        {/* <li>Home</li>
-                                        <li>TV Shows</li>
-                                        <li>Movies</li>
-                                        <li>My List</li> */}
-                                        {itemList}
+                                         {itemList}
                                     </ul>
                                 </div>
                             </ul>
