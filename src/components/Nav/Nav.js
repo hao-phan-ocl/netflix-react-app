@@ -6,18 +6,25 @@ import './Nav.scss';
 
 export default function Nav() {
     const [atTopLevel, setAtTopLevel] = useState(false);
+
+    const [searchClicked, setSearchClicked] = useState(false);
+
+    const itemList = (<>
+                        <li>Home</li>
+                        <li>TV Shows</li>
+                        <li>Movies</li>
+                        <li>My List</li>
+                    </>
+    )
     
     window.onscroll = () => {
         setAtTopLevel(window.pageYOffset === 0 ? true : false)
         // return () => (window.onscroll = null);
     }
 
-    const navItems = [
-        {category: 'Home', link: '/'},
-        {category: 'TV Shows', link: '/tvshows'},
-        {category: 'Movies', link: '/movies'},
-        {category: 'My List', link: '/mylist'}
-    ];
+    if (searchClicked) {
+        
+    }
 
     return (
         <header>
@@ -26,16 +33,39 @@ export default function Nav() {
                     <div className="nav-left">
                         <img src={logo} alt="Netflix Logo" className="logo"/>
                         {/* <Link to="/"><img src={logo} alt="Netflix Logo" className="logo"/></Link> */}
-                        <ul className="nav-links">
-                            {navItems.map(item => (
-                                // <Link to={item.link} key={item.category}>
-                                    <li>{item.category}</li>
-                                // </Link>
-                            ))}
-                        </ul>
+                        <div className="navigation">
+                            <ul className="navigation-large">
+                                {/* <li>Home</li>
+                                <li>TV Shows</li>
+                                <li>Movies</li>
+                                <li>My List</li> */}
+                                {itemList}
+                            </ul>
+                            <ul className="navigation-small">
+                                <li>Browse</li>
+                                <ArrowDropDown />
+                                <div className="nav-small-wrapper">
+                                    <ArrowDropUp />
+                                    <ul className="nav-small-wrapper-content">
+                                        {/* <li>Home</li>
+                                        <li>TV Shows</li>
+                                        <li>Movies</li>
+                                        <li>My List</li> */}
+                                        {itemList}
+                                    </ul>
+                                </div>
+                            </ul>
+                        </div>
                     </div>
                     <div className="nav-right">
-                        <Search className="icon" />
+                        <input 
+                            type="text" 
+                            className="search-bar" 
+                            placeholder="Search titles" 
+                            autoComplete="off" 
+                            autoFocus 
+                        />
+                        <Search className="icon" onClick={() => setSearchClicked(!searchClicked)} />
                         <div className="account-box">
                             <AccountBox />
                             <ArrowDropDown className="arrow-down" />
