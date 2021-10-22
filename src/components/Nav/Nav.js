@@ -12,25 +12,26 @@ export default function Nav() {
         // return () => (window.onscroll = null);
     }
 
+    const navItems = [
+        {category: 'Home', link: '/'},
+        {category: 'TV Shows', link: '/tvshows'},
+        {category: 'Movies', link: '/movies'},
+        {category: 'My List', link: '/mylist'}
+    ];
+
     return (
         <header>
-            <div className={atTopLevel ? "navbar fixed-top px-5" : "navbar fixed-top bg-black px-5"}>
-                <div className="container-fluid">
+            <div className={atTopLevel ? "navbar" : "navbar scrolled"}>
+                <div className="nav-container">
                     <div className="nav-left">
-                        <Link to="/"><img src={logo} alt="Netflix Logo" className="logo"/></Link>
+                        <img src={logo} alt="Netflix Logo" className="logo"/>
+                        {/* <Link to="/"><img src={logo} alt="Netflix Logo" className="logo"/></Link> */}
                         <ul className="nav-links">
-                            <li>
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/tvshows">TV Shows</Link>
-                            </li>
-                            <li>
-                                <Link to="/movies">Movies</Link>
-                            </li>
-                            <li>
-                                <Link to="/mylist">My List</Link>
-                            </li>
+                            {navItems.map(item => (
+                                // <Link to={item.link} key={item.category}>
+                                    <li>{item.category}</li>
+                                // </Link>
+                            ))}
                         </ul>
                     </div>
                     <div className="nav-right">

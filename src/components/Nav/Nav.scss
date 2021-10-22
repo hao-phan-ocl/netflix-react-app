@@ -1,94 +1,116 @@
 .navbar {
-    color: white;
     transition-duration: 1s;
+    position: fixed;
+    top: 0;
+    padding: clamp(.1rem , 3vw, .5rem) clamp(.4rem , 3vw, 3.75rem);
+    z-index: 99;
+    width: 100%;
 
-    .nav-left {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    
-        .logo {
-            width: 100px;
-        }
-    
-        .nav-links {
-            display: flex;
-            justify-content: space-between;
-            padding-left: 20px;
-            margin: 0;
-    
-            li {
-                display: inline-block;
-                padding-left: 30px;
-                font-size: .85rem;
-            }
-    
-            a {
-                color: white;
-                text-decoration: none;
-                transition: 0.5s;
-    
-                &:hover {
-                    color: #b1b1b1;
-                }
-            }
-        }
+    &.scrolled {
+        background-color: black;
     }
-    
-    .nav-right {
+
+    .nav-container {
         display: flex;
+        width: 100%;
+        justify-content: space-between;
         align-items: center;
-    
-        .icon {
-            margin-right: 15px;
+
+        .nav-left {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        
+            .logo {
+                width: clamp(2rem, 10vw, 7rem);
+            }
+        
+            .nav-links {
+                display: flex;
+                justify-content: space-between;
+                margin: 0;
+                padding: 0;
+        
+                li {
+                    display: inline-block;
+                    margin-left: clamp(.8rem , 2vw, 3rem);
+
+                    &:first-child {
+                        margin-left: clamp(1.1rem , 2vw, 4rem);
+                    }
+                }
+        
+                a {
+                    text-decoration: none;
+                    transition: 0.5s;
+        
+                    &:hover {
+                        color: #b1b1b1;
+                    }
+                }
+            }
         }
-    
-        .account-box {
-            position: relative;
-            font-size: .85rem;
-    
-            .arrow-down {
-                transition-duration: 0.5s;
-                transition-property: transform;
+        
+        .nav-right {
+            display: flex;
+            align-items: center;
+        
+            .icon {
+                margin-right: .9rem;
             }
-    
-            .account-expand {
-                display: none;
-            }
-    
-            &:hover {
+        
+            .account-box {
+                position: relative;
+                display: flex;
+                flex-wrap: nowrap;
+        
                 .arrow-down {
-                    transform: rotate(180deg);     
+                    transition-duration: 0.5s;
+                    transition-property: transform;
                 }
-    
+        
                 .account-expand {
-                    display: flex;
+                    display: none;
                 }
-    
-                .arrow-up {
-                    position: absolute;
-                    right: 25px;
-                }
-    
-                .account-expand-content {
-                    position: absolute;
-                    opacity: .8;
-                    right: 0;
-                    top: 40px;
-                    flex-direction: column;
-                    background-color: black;
-                    width: 160px;
-                    text-align: left;
-                    padding: 10px 10px;
-                                    
-                    div {
-                        margin: 5px;
+        
+                &:hover {
+                    .arrow-down {
+                        transform: rotate(180deg);     
+                    }
+        
+                    .account-expand {
+                        display: flex;
+                    }
+        
+                    .arrow-up {
+                        position: absolute;
+                        right: 1.5rem;
+                        top: 1.4rem;
+                    }
+        
+                    .account-expand-content {
+                        position: absolute;
+                        opacity: .8;
+                        right: 0;
+                        top: 2.5rem;
+                        flex-direction: column;
+                        background-color: black;
+                        width: 10rem;
+                        text-align: left;
+                        padding: .4rem;
+                        font-size: clamp(0.5rem, 1.3vw, .8rem);
+                                        
+                        div {
+                            margin: 5px;
+                        }
                     }
                 }
             }
         }
     }
 }
+
+    
 
 
 

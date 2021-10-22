@@ -1,0 +1,13 @@
+html {
+    font-size: clamp(.5rem, 1.3vw, 1rem);
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
