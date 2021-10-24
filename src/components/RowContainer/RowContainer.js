@@ -1,5 +1,4 @@
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from '@material-ui/icons';
-import React from 'react';
 import SliderItem from '../SliderItem/SliderItem';
 import './RowContainer.scss';
 

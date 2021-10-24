@@ -1,5 +1,5 @@
 import { InfoOutlined, PlayArrow } from '@material-ui/icons';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Billboard.scss';
 
 export default function Billboard() {

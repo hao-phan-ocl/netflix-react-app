@@ -23,11 +23,10 @@
         
             .logo {
                 width: clamp(2rem, 10vw, 7rem);
+                margin-right: clamp(1.1rem , 2vw, 4rem);
             }
         
             .navigation {
-                display: flex;
-                justify-content: space-between;
                 margin: 0;
                 padding: 0;
 
@@ -36,13 +35,10 @@
                 }
 
                 .navigation-large {
+                    padding: 0;
                     li {
                         display: inline-block;
-                        margin-left: clamp(.8rem , 2vw, 3rem);
-    
-                        &:first-child {
-                            margin-left: clamp(1.1rem , 2vw, 4rem);
-                        }
+                        margin-right: clamp(.8rem , 2vw, 3rem);
                     }
             
                     a {
@@ -63,6 +59,7 @@
                     .navigation-small {
                         display: flex;
                         position: relative;
+                        padding: 0;
 
                         li {
                             list-style: none;
@@ -78,26 +75,28 @@
                             }   
                         }
 
-                        .nav-small-wrapper {
+                        .nav-small-expand {
                             display: none;
                         }
 
                         &:hover {
-                            .nav-small-wrapper {
+                            .nav-small-expand {
                                 display: flex;
                                 position: absolute;
                                 flex-direction: column;
-                                top: 1.5rem;
-                                left: -1.7rem;
+                                top: 1.3rem;
+                                left: -3.3rem;
                                 align-items: center;
                             }
 
-                            .nav-small-wrapper-content{
+                            .nav-small-expand-content{
                                 background-color: black;
                                 width: 15rem;
                                 opacity: .8;
                                 text-align: center;
                                 list-style: none;
+                                padding: 0;
+                                margin: 0;
 
                                 li {
                                     margin-left: 0;
@@ -115,18 +114,40 @@
             display: flex;
             align-items: center;
 
-            .search-bar {
-                background-color: black;
-                border: 1px white solid;
-                color: white;
-                padding: 5px;
-                width: clamp(15rem, 15vw, 30rem);
-                height: 2.5rem;
-                opacity: .8;
+            .search-box {
+                display: flex;
+                
+                .search-bar {
+                    display: none;
+                }
+
+                .search-icon {
+                    margin-right: 1rem;
+                }
             }
-        
-            .icon {
-                margin-right: .9rem;
+
+            .search-box-clicked {
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                .search-bar {
+                    background-color: black;
+                    border: 1px white solid;
+                    color: white;
+                    padding: 5px;
+                    padding-left: 1.7rem;
+                    width: clamp(15rem, 15vw, 30rem);
+                    height: 2.5rem;
+                    opacity: .8;
+                    margin-right: 1rem;
+                }
+
+                .search-icon {
+                    position: absolute;
+                    z-index: 99;
+                    left: 2px;
+                }
             }
         
             .account-box {
@@ -135,8 +156,7 @@
                 flex-wrap: nowrap;
         
                 .arrow-down {
-                    transition-duration: 0.5s;
-                    transition-property: transform;
+                    transition: transform 0.5s;
                 }
         
                 .account-expand {
@@ -165,10 +185,9 @@
                         top: 2.5rem;
                         flex-direction: column;
                         background-color: black;
-                        width: 10rem;
+                        width: 12rem;
                         text-align: left;
                         padding: .4rem;
-                        font-size: clamp(0.5rem, 1.3vw, .8rem);
                                         
                         div {
                             margin: 5px;

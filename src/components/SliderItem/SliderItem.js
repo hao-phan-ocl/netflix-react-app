@@ -1,4 +1,3 @@
-import React from 'react';
 import './SliderItem.scss';
 
 export default function SliderItem() {
