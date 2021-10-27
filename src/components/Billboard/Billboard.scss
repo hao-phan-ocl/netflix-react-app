@@ -87,6 +87,17 @@
                     transform: scale(1);
                 }
             }
+
+            @media screen and (max-width: 500px) {
+                button {
+                    padding: 0.2rem .7rem;
+                }
+
+                .icon {
+                    margin-right: .2rem;
+                    transform: scale(.8);
+                }
+            }
         }
     } 
 }
