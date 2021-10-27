@@ -1,8 +1,8 @@
 .navbar {
+    cursor: pointer;
     transition-duration: 1s;
     position: fixed;
-    top: 0;
-    padding: clamp(.1rem , 3vw, .5rem) clamp(.4rem , 3vw, 3.75rem);
+    top: 0;   
     z-index: 99;
     width: 100%;
 
@@ -13,6 +13,7 @@
     .nav-container {
         display: flex;
         width: 100%;
+        padding: clamp(.1rem , 3vw, .5rem) clamp(.4rem , 3vw, 3.75rem);
         justify-content: space-between;
         align-items: center;
 
@@ -116,6 +117,7 @@
 
             .search-box {
                 display: flex;
+                margin-right: .5rem;
                 
                 .search-bar {
                     display: none;
@@ -123,6 +125,7 @@
 
                 .search-icon {
                     margin-right: 1rem;
+                    transform: scale(1.4);
                 }
             }
 
@@ -136,7 +139,7 @@
                     border: 1px white solid;
                     color: white;
                     padding: 5px;
-                    padding-left: 1.7rem;
+                    padding-left: 2.3rem;
                     width: clamp(15rem, 15vw, 30rem);
                     height: 2.5rem;
                     opacity: .8;
@@ -146,7 +149,8 @@
                 .search-icon {
                     position: absolute;
                     z-index: 99;
-                    left: 2px;
+                    left: 5px;
+                    transform: scale(1.4);
                 }
             }
         
@@ -154,6 +158,10 @@
                 position: relative;
                 display: flex;
                 flex-wrap: nowrap;
+
+                .profile {
+                    transform: scale(1.4);
+                }
         
                 .arrow-down {
                     transition: transform 0.5s;

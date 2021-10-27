@@ -1,49 +1,91 @@
-.billboard{
+.billboard {
+    width: 100%;
     position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
 
-    img {
+    .banner {
         height: 100%;
         width: 100%;
         object-fit: cover;
     }
 
     .info-wrapper {
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: flex-end;
         position: absolute;
-        
-        top: 30%;
+        display: flex;
+        align-items: flex-end;
+        top: 0;
         bottom: 35%;
         left: 4%;
         width: 36%;
 
-        img {
-            width: 100%;
+        .title-logo {
+            width: clamp(15rem, 30vw, 40rem);
         }
 
         .description {
             font-size: 1.2vw;
-            margin: 20px 0;
+            margin: 1rem 0;
         }
 
         .button-box {
-            display: flex;     
+            display: flex;
             
-            :first-child {
-                margin-right: 10px;
-            }
-
             button {
+                cursor: pointer;
                 display: flex;
-                align-items: center;
+                align-items: center;              
+                padding: 0.6rem 2.2rem;
+                border-radius: 5px;
+                font-weight: 500;
+                border: 1px;
+                font-size: clamp(0.7rem, 1.3vw, 1.7rem);
+                font-family: 'Open Sans', sans-serif;
             }
 
-            svg {
-                margin-right: 7px;
+            .play {
+                margin-right: 1rem;
+            }
+
+            .info {
+                color: white;
+                background-color: rgba(109, 109, 110, 0.7);
+            }
+
+            .icon {
+                margin-right: 1rem;
+                transform: scale(1.5);
+            }
+
+            @media screen and (max-width: 1500px) {
+                button {
+                    padding: 0.5rem 1.8rem;
+                }
+
+                .icon {
+                    margin-right: .7rem;
+                    transform: scale(1.4);
+                }
+            }
+
+            @media screen and (max-width: 1200px) {
+                button {
+                    padding: 0.5rem 1.3rem;
+                }
+
+                .icon {
+                    margin-right: .7rem;
+                    transform: scale(1.2);
+                }
+            }
+
+            @media screen and (max-width: 800px) {
+                button {
+                    padding: 0.3rem 1rem;
+                }
+
+                .icon {
+                    margin-right: .5rem;
+                    transform: scale(1);
+                }
             }
         }
     } 

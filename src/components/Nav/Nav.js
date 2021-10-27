@@ -73,7 +73,7 @@ function RightNav() {
                 />
                 </div>
             <div className="account-box">
-                <AccountBox />
+                <AccountBox className="profile"/>
                 <ArrowDropDown className="arrow-down" />
                 <div className="account-expand">
                     <ArrowDropUp className="arrow-up"/>
