@@ -16,11 +16,11 @@ export default function Billboard() {
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien eget mi proin sed.</p>
                     </div>
                     <div className="button-box">
-                        <button type="button" className="play">
+                        <button className="play">
                             <PlayArrow className="icon"/>
                             Play
                         </button>
-                        <button type="button" className="info">
+                        <button className="info">
                             <InfoOutlined className="icon"/>
                             More Info
                         </button>
