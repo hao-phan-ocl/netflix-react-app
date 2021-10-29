@@ -8,7 +8,6 @@ import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from '@material-ui/icon
 
 function SampleNextArrow(props) {
   const { onClick } = props;
-  console.log(props)
   return (
     <div
       className="arrow next"
@@ -142,39 +141,6 @@ export default function Carousel() {
               <img src={img3} alt=""/>
             </div>
           </Slider>
-        </div>
-
-
-        // <div className="row-container">
-        //     <div className="title">Netflix Trending</div>
-        //     <div className="slider">
-        //         {/* <ArrowBackIosOutlined className="arrow left" /> */}
-        //         <div className="slider-container">
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //             <SliderItem />
-        //         </div>
-        //         {/* <ArrowForwardIosOutlined className="arrow right"/> */}
-        //     </div>
-        // </div>
+        </div>      
     )
 }

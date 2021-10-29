@@ -5,7 +5,6 @@ import { AccountBox, ArrowDropDown, ArrowDropUp, Search } from '@material-ui/ico
 import './Nav.scss';
 
 export default function Nav() {
-
     const [atTopLevel, setAtTopLevel] = useState(false);
 
     window.onscroll = () => {
@@ -24,7 +23,6 @@ export default function Nav() {
 }
 
 function LeftNav() {
-
     const itemList = (<>
                         <li>Home</li>
                         <li>TV Shows</li>
@@ -57,7 +55,6 @@ function LeftNav() {
 }
 
 function RightNav() {
-
     const [searchClicked, setSearchClicked] = useState(false);
 
     return (
