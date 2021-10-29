@@ -3,9 +3,6 @@ import { useState } from 'react';
 import './Billboard.scss';
 
 export default function Billboard() {
-
-    const API_KEY = '041f1966539ec8a6fa27643ecf32791b';
-
     return (            
         <div className="billboard">
             <img className="banner" src="https://assets.nflxext.com/ffe/siteui/vlv3/68c9706b-acd1-4472-bb1d-ef3ca933154c/37e540d6-dd41-4a16-a79b-61153822736f/FI-en-20211011-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="netflix"/>
