@@ -1,30 +1,60 @@
 import { InfoOutlined, PlayArrow } from '@material-ui/icons';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import instance from '../../api/axiosInstance';
+import requests from '../../api/requests';
+import PreviewModal from '../PreviewModal/PreviewModal';
 import './Billboard.scss';
 
 export default function Billboard() {
-    return (            
+    const [billboard, setBilboard] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
+            
+    useEffect(() => {       
+        async function fetchMovie() {
+            const request = await instance.get(requests.trending);
+
+            setBilboard(request.data.results[
+                Math.floor(Math.random() * request.data.results.length)
+            ]);
+            console.log(request.data.results)
+        } 
+        fetchMovie();
+    },[]);
+
+    useEffect(() => {
+        openModal && (document.body.style.overflow = 'hidden');
+        !openModal && (document.body.style.overflow = 'unset');
+    }, [openModal]);
+
+    function truncate(string, num) {
+        return string?.length > num ? string.slice(0, num) + '...' : string;
+    }
+
+    return (    
         <div className="billboard">
-            <img className="banner" src="https://assets.nflxext.com/ffe/siteui/vlv3/68c9706b-acd1-4472-bb1d-ef3ca933154c/37e540d6-dd41-4a16-a79b-61153822736f/FI-en-20211011-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="netflix"/>
+            <img className="banner" src={`https://image.tmdb.org/t/p/original/${billboard?.backdrop_path}`} alt={billboard?.name || billboard?.original_title || billboard?.original_name}/>
             <div className="info-wrapper">
-                <div className="logo-and-text">
-                    <img className="title-logo" src="https://occ-0-2537-1501.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABeXJWv4gaZaX_7y0Kw2jtmEhNbfCwOciFWUqY6GNQvVwlTqJpZ0PuuWaZ9Igyp6_kil3BXubg5mrFO_994YnEC95WkS6OLqn6n3CdVi2IgL7biF7wzKZhfJxF4iTja3X34cgNgOKm0Y6FFM6mCeHs0OXrxAlfCbBO4p2h_E0x18c1Q.png?r=e3a" alt=""/>
-                    <div className="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien eget mi proin sed.</p>
-                    </div>
+                <div className="info-inner">
+                    <h1 className="movie-title">
+                        {billboard?.name || billboard?.original_title || billboard?.original_name}
+                    </h1>
+                    <h3 className="description">
+                        {truncate(billboard?.overview, 200)}
+                    </h3>
                     <div className="button-box">
                         <button className="play">
                             <PlayArrow className="icon"/>
                             Play
                         </button>
-                        <button className="info">
+                        <button className="info" onClick={() => setOpenModal(true)}> 
                             <InfoOutlined className="icon"/>
                             More Info
                         </button>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div>            
+            {openModal && <PreviewModal setOpenModal={setOpenModal}/>}
+        </div>      
     )
 }
 
