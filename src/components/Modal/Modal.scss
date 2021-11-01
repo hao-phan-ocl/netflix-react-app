@@ -1,0 +1,96 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgba($color: black, $alpha: .7);
+
+    .modal-content {   
+        padding-bottom: 2rem;
+        width: 850px;
+        border-radius: 10px;
+        border: 1px;
+        overflow: hidden;
+        position: relative;
+        background-color: black;
+
+        .close {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            transform: scale(1.7);
+            color: #313131;
+            z-index: 10;
+        }
+
+        .banner-and-info {
+            position: relative;
+
+            .info-container {
+                position: absolute;
+                bottom: 10%;
+                left: 5%;
+                width: 40%;
+
+                .title {
+                    color: goldenrod;
+                    font-size: 2.2rem;
+                    margin: 1rem 0;
+                }
+
+                .button-box {
+                    display: flex;
+
+                    button {
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        border-radius: 5px;
+                        padding: .5rem 1.5rem;
+                        border: 1px;
+                        margin-right: 1rem;
+                        font-weight: 500;
+                        font-size: 1.5rem;
+                        font-family: 'Open Sans', sans-serif;
+
+                        .icon {
+                            margin-right: .5rem;
+                            transform: scale(1.3);
+                        }
+                    }
+
+                    .add {
+                        color: white;
+                        background-color: rgba(109, 109, 110, 0.7);
+                    }
+
+                }
+            }
+        }
+
+        .movie-info {
+            display: flex;
+            margin: .8rem 0;
+            padding: 0 2.5rem;
+            font-weight: 400;
+            font-size: 1.1rem;
+            line-height: 1.6;
+
+            .description {
+                width: 70%;
+                text-align: justify;
+                margin-right: 2rem;
+            }
+
+            .genres {
+                text-align: left;
+            }
+        }
+    }
+}
