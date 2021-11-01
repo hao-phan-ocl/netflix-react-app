@@ -2,13 +2,13 @@ import { InfoOutlined, PlayArrow } from '@material-ui/icons';
 import { useState, useEffect } from 'react';
 import instance from '../../api/axiosInstance';
 import requests from '../../api/requests';
-import PreviewModal from '../PreviewModal/PreviewModal';
+import Modal from '../Modal/Modal';
 import './Billboard.scss';
 
 export default function Billboard() {
     const [billboard, setBilboard] = useState([]);
     const [openModal, setOpenModal] = useState(false);
-            
+
     useEffect(() => {       
         async function fetchMovie() {
             const request = await instance.get(requests.trending);
@@ -17,9 +17,9 @@ export default function Billboard() {
                 Math.floor(Math.random() * request.data.results.length)
             ]);
             console.log(request.data.results)
-        } 
+        }
         fetchMovie();
-    },[]);
+    }, []);
 
     useEffect(() => {
         openModal && (document.body.style.overflow = 'hidden');
@@ -32,11 +32,14 @@ export default function Billboard() {
 
     return (    
         <div className="billboard">
-            <img className="banner" src={`https://image.tmdb.org/t/p/original/${billboard?.backdrop_path}`} alt={billboard?.name || billboard?.original_title || billboard?.original_name}/>
+            <img 
+                className="banner" 
+                src={`https://image.tmdb.org/t/p/original/${billboard?.backdrop_path}`} 
+                alt={ billboard?.name || billboard?.title }/>
             <div className="info-wrapper">
                 <div className="info-inner">
                     <h1 className="movie-title">
-                        {billboard?.name || billboard?.original_title || billboard?.original_name}
+                        {billboard?.name || billboard?.title}
                     </h1>
                     <h3 className="description">
                         {truncate(billboard?.overview, 200)}
@@ -53,7 +56,7 @@ export default function Billboard() {
                     </div>
                 </div>
             </div>            
-            {openModal && <PreviewModal setOpenModal={setOpenModal}/>}
+            {openModal && <Modal setOpenModal={setOpenModal} billboard={billboard}/>}
         </div>      
     )
 }
