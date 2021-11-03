@@ -1,37 +1,36 @@
 import { Add, Cancel, PlayArrow } from '@material-ui/icons';
 import { useState, useEffect } from 'react';
+import reactDom from 'react-dom';
 import instance from '../../api/axiosInstance';
 import requests from '../../api/requests';
 import './Modal.scss';
 
 export default function Modal({ setOpenModal, billboard }) {
     const [genres, setGenres] = useState([]);
-    const type = billboard?.media_type;
     
     useEffect(() => {
         async function fetchGenres () {
             const res = await instance.get(
-                type === 'movie'? 
+                billboard?.media_type === 'movie'? 
                 requests.movie_genres: 
                 requests.tv_genres
             );
             setGenres(
-                res.data.genres.filter(elem => billboard.genre_ids.includes(elem.id))
+                res.data.genres.filter(elem => billboard?.genre_ids.includes(elem.id))
             );
-            console.log(billboard.genre_ids)
-            console.log(res.data.genres)
         }
         fetchGenres();
-    }, []);
-    
-    return (
+    }, [billboard]);
+
+    return reactDom.createPortal(
         <div className="modal">
             <div className="modal-content">
                 <Cancel className="close" onClick={() => setOpenModal(false)}/>
                 <div className="banner-and-info">
                     <img 
                         className="banner"
-                        src={`https://image.tmdb.org/t/p/original/${billboard?.backdrop_path}`} 
+                        src={`https://image.tmdb.org/t/p/original/${billboard.backdrop_path}`} 
+                        alt={billboard?.name || billboard?.title}
                     />
                     <div className="info-container">
                         <h1 className="title">
@@ -63,6 +62,7 @@ export default function Modal({ setOpenModal, billboard }) {
                     </div>
                 </div>
             </div>
-        </div>
-    )
+        </div>,
+        document.getElementById('modal')
+    );
 }

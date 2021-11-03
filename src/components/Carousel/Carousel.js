@@ -5,6 +5,8 @@ import img3 from './hobbit.png';
 import SliderItem from '../SliderItem/SliderItem';
 import Slider from 'react-slick';
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from '@material-ui/icons';
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 
 function SampleNextArrow(props) {
   const { onClick } = props;
@@ -31,7 +33,9 @@ function SamplePrevArrow(props) {
 }
 
 export default function Carousel() {
-
+    const {context2} = useContext(UserContext);
+    const [fetchTrending] = context2;
+    
     const settings = {
         dots: false,
         infinite: true,
@@ -82,7 +86,8 @@ export default function Carousel() {
         <div className="carousel">
           <h2 className="title"> Trending </h2>
           <Slider {...settings} className="slider-container">
-            <div className="a">
+            {}
+            {/* <div className="a">
               <img src={img1} alt=""/>
             </div>
             <div className="a">
@@ -139,7 +144,7 @@ export default function Carousel() {
             </div>
             <div className="a">
               <img src={img3} alt=""/>
-            </div>
+            </div> */}
           </Slider>
         </div>      
     )

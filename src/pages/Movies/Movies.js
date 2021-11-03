@@ -1,11 +1,11 @@
 import Billboard from '../../components/Billboard/Billboard';
 import Carousel from '../../components/Carousel/Carousel';
 import Nav from '../../components/Nav/Nav';
-import './Home.scss';
+import './Movies.scss';
 
-export default function Home() {
+export default function Movies() {
     return (
-        <div className="home"> 
+        <div className="movies"> 
             <Nav />
             <Billboard />
             <Carousel />

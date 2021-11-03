@@ -1,30 +1,13 @@
 import { InfoOutlined, PlayArrow } from '@material-ui/icons';
-import { useState, useEffect } from 'react';
-import instance from '../../api/axiosInstance';
-import requests from '../../api/requests';
+import { useState, useEffect, useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 import Modal from '../Modal/Modal';
 import './Billboard.scss';
 
 export default function Billboard() {
-    const [billboard, setBilboard] = useState([]);
-    const [openModal, setOpenModal] = useState(false);
-
-    useEffect(() => {       
-        async function fetchMovie() {
-            const request = await instance.get(requests.trending);
-
-            setBilboard(request.data.results[
-                Math.floor(Math.random() * request.data.results.length)
-            ]);
-            console.log(request.data.results)
-        }
-        fetchMovie();
-    }, []);
-
-    useEffect(() => {
-        openModal && (document.body.style.overflow = 'hidden');
-        !openModal && (document.body.style.overflow = 'unset');
-    }, [openModal]);
+    const {context, context3} = useContext(UserContext);
+    const [billboard] = context;
+    const [openModal, setOpenModal] = context3;
 
     function truncate(string, num) {
         return string?.length > num ? string.slice(0, num) + '...' : string;
@@ -56,7 +39,7 @@ export default function Billboard() {
                     </div>
                 </div>
             </div>            
-            {openModal && <Modal setOpenModal={setOpenModal} billboard={billboard}/>}
+            {openModal && <Modal openModal={openModal} setOpenModal={setOpenModal} billboard={billboard}/>}
         </div>      
     )
 }

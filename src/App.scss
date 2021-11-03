@@ -11,3 +11,13 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+button:hover {
+    opacity: .7;
+}

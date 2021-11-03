@@ -1,7 +1,8 @@
 .modal {
+    color: white;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -12,12 +13,12 @@
 
     .modal-content {   
         padding-bottom: 2rem;
+        margin: 4rem 2rem;
         width: 850px;
         border-radius: 10px;
-        border: 1px;
         overflow: hidden;
         position: relative;
-        background-color: black;
+        background-color: #181818;
 
         .close {
             cursor: pointer;
@@ -32,15 +33,19 @@
         .banner-and-info {
             position: relative;
 
+            .banner {
+                width: 100%;
+            }
+
             .info-container {
                 position: absolute;
                 bottom: 10%;
-                left: 5%;
+                left: 4%;
                 width: 40%;
 
                 .title {
                     color: goldenrod;
-                    font-size: 2.2rem;
+                    font-size: 2.5rem;
                     margin: 1rem 0;
                 }
 
@@ -48,12 +53,10 @@
                     display: flex;
 
                     button {
-                        cursor: pointer;
                         display: flex;
                         align-items: center;
                         border-radius: 5px;
                         padding: .5rem 1.5rem;
-                        border: 1px;
                         margin-right: 1rem;
                         font-weight: 500;
                         font-size: 1.5rem;
@@ -67,7 +70,16 @@
 
                     .add {
                         color: white;
-                        background-color: rgba(109, 109, 110, 0.7);
+                        background-color: rgba(109, 109, 110, .9);
+                    }
+
+                    @media screen and (max-width: 560px) {
+                        button {
+                            font-size: 1.1rem;
+                            padding: .4rem 1rem;
+                            border-radius: 3px;
+                            margin-right: .5rem;
+                        }
                     }
 
                 }

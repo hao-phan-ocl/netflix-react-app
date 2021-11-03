@@ -1,5 +1,4 @@
 .navbar {
-    cursor: pointer;
     transition-duration: 1s;
     position: fixed;
     top: 0;   
@@ -117,6 +116,7 @@
             align-items: center;
 
             .search-box {
+                cursor: pointer;
                 display: flex;
                 margin-right: .5rem;
                 
@@ -131,10 +131,11 @@
             }
 
             .search-box-clicked {
+                cursor: pointer;
                 display: flex;
                 align-items: center;
                 position: relative;
-
+                
                 .search-bar {
                     background-color: black;
                     border: 1px white solid;
@@ -156,6 +157,7 @@
             }
         
             .account-box {
+                cursor: pointer;
                 position: relative;
                 display: flex;
                 flex-wrap: nowrap;
