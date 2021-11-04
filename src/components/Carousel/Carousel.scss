@@ -26,21 +26,49 @@
     }
 
     .slider-container {
-        // This .a to make sure pics can scale over the neighbor div
-        .a {
-            padding: 2rem 0;
+        .slide {
+            position: relative;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
 
-            img {
+            .button-box {
+                display: none;
+            }
+
+            .image {
                 width: 100%;
                 padding: 0 2px;
                 transition: transform .3s;
                 border-radius: 7px;
-    
-                &:hover {
-                    transform: scale(1.1);
-                    border-radius: 7px;
+            }
+
+            &:hover {
+                .image {
+                    opacity: .3;
                 }
-            }  
-        }    
+
+                .button-box {
+                    transform: scale(3);
+                    display: block;
+                    position: absolute;
+
+                    .play {
+                        margin-right: 5px;
+
+                        &:hover {
+                            opacity: .6;
+                        }
+                    }
+
+                    .info {
+                        &:hover {
+                            opacity: .6;
+                        }
+                    }
+                }
+            }
+            
+        }  
     }
 }

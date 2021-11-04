@@ -5,22 +5,22 @@ import instance from '../../api/axiosInstance';
 import requests from '../../api/requests';
 import './Modal.scss';
 
-export default function Modal({ setOpenModal, billboard }) {
+export default function Modal({ setOpenModal, data }) {
     const [genres, setGenres] = useState([]);
     
     useEffect(() => {
         async function fetchGenres () {
             const res = await instance.get(
-                billboard?.media_type === 'movie'? 
+                data?.media_type === 'movie'? 
                 requests.movie_genres: 
                 requests.tv_genres
             );
             setGenres(
-                res.data.genres.filter(elem => billboard?.genre_ids.includes(elem.id))
+                res.data.genres.filter(elem => data?.genre_ids.includes(elem.id))
             );
         }
         fetchGenres();
-    }, [billboard]);
+    }, [data]);
 
     return reactDom.createPortal(
         <div className="modal">
@@ -29,12 +29,12 @@ export default function Modal({ setOpenModal, billboard }) {
                 <div className="banner-and-info">
                     <img 
                         className="banner"
-                        src={`https://image.tmdb.org/t/p/original/${billboard.backdrop_path}`} 
-                        alt={billboard?.name || billboard?.title}
+                        src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`} 
+                        alt={data?.name || data?.title}
                     />
                     <div className="info-container">
                         <h1 className="title">
-                            {billboard?.name || billboard?.title}
+                            {data?.name || data?.title}
                         </h1>
                         <div className="button-box">
                             <button type="button" className="play">
@@ -50,7 +50,7 @@ export default function Modal({ setOpenModal, billboard }) {
                 </div>
                 <div className="movie-info">
                     <div className="description">
-                        {billboard?.overview}
+                        {data?.overview}
                     </div>
                     <div className="genres">
                         <span style={{color: '#777'}}>Genres: </span>
