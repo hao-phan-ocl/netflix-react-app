@@ -1,12 +1,11 @@
 import './Carousel.scss';
-import img1 from './django.jpg';
-import img2 from './tintin.jpg';
-import img3 from './hobbit.png';
-import SliderItem from '../SliderItem/SliderItem';
 import Slider from 'react-slick';
-import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from '@material-ui/icons';
-import { useContext } from 'react';
-import { UserContext } from '../../context/UserContext';
+import { ArrowBackIosOutlined, ArrowForwardIosOutlined, Info, PlayCircleFilled } from '@material-ui/icons';
+import { useState } from 'react';
+import useFetch from '../../customHooks/useFetch';
+import requests from '../../api/requests';
+import Modal from '../Modal/Modal';
+import useModal from '../../customHooks/useModal';
 
 function SampleNextArrow(props) {
   const { onClick } = props;
@@ -33,8 +32,9 @@ function SamplePrevArrow(props) {
 }
 
 export default function Carousel() {
-    const {context2} = useContext(UserContext);
-    const [fetchTrending] = context2;
+    const [data] = useFetch(`${requests.trending}`, false);
+    const [slideData, setSlideData] = useState([]);
+    const [openModal, setOpenModal] = useModal();
     
     const settings = {
         dots: false,
@@ -86,66 +86,24 @@ export default function Carousel() {
         <div className="carousel">
           <h2 className="title"> Trending </h2>
           <Slider {...settings} className="slider-container">
-            {}
-            {/* <div className="a">
-              <img src={img1} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img2} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img3} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img1} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img2} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img3} alt=""/>
-            </div><div className="a">
-              <img src={img1} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img2} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img3} alt=""/>
-            </div><div className="a">
-              <img src={img1} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img2} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img3} alt=""/>
-            </div><div className="a">
-              <img src={img1} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img2} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img3} alt=""/>
-            </div><div className="a">
-              <img src={img1} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img2} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img3} alt=""/>
-            </div><div className="a">
-              <img src={img1} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img2} alt=""/>
-            </div>
-            <div className="a">
-              <img src={img3} alt=""/>
-            </div> */}
+            {data.map(elem => (
+              <div className="slide" key={elem.id}>
+                <img className="image" src={`https://image.tmdb.org/t/p/w500/${elem.backdrop_path}`} alt={elem.name || elem.title} />
+                <div className="button-box">
+                  <PlayCircleFilled className="play" type="button" />
+                  <Info 
+                    className="info" 
+                    type="button" 
+                    onClick={() => {
+                      setOpenModal(true);
+                      setSlideData(elem);
+                    }}
+                  />  
+                </div>
+              </div>
+            ))}
           </Slider>
-        </div>      
+          {openModal && <Modal setOpenModal={setOpenModal} data={slideData} />}
+        </div>
     )
 }
