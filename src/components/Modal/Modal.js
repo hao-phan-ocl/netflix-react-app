@@ -23,7 +23,7 @@ export default function Modal({ setOpenModal, data }) {
     }, [data]);
 
     return reactDom.createPortal(
-        <div id="modal-container" className="modal">
+        <div className="modal">
             <div className="modal-content">
                 <Cancel className="close" onClick={() => setOpenModal(false)}/>
                 <div className="banner-and-info">
