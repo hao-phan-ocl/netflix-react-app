@@ -10,7 +10,7 @@ export default function App() {
     <Router>
         <Nav />
         <Routes>
-         <Route path="/" element={<Home />} />
+         <Route path="/netflix-react-app" element={<Home />} />
          <Route path="/tvshows" element={<TvShows />} />
          <Route path="/movies" element={<Movies />} />
         </Routes>

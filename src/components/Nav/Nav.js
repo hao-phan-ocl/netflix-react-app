@@ -23,26 +23,16 @@ export default function Nav() {
 }
 
 function LeftNav() {
-    // const itemList = (<>
-    //                     <li>Home</li>
-    //                     <li>TV Shows</li>
-    //                     <li>Movies</li>
-    //                     <li>My List</li>
-    //                 </>
-    // );
-
     const itemList = [
-        {name: 'Home', link: '/'},
+        {name: 'Home', link: '/netflix-react-app'},
         {name: 'TV Shows', link: '/tvshows'},
         {name: 'Movies', link: '/movies'},
         {name: 'My List', link: '/mylist'}
     ]
 
-    // const itemList = ['Home' , 'TV Shows', 'Movies', 'My List']
-
     return (
         <div className="nav-left">
-            <Link to="/">
+            <Link to="/netflix-react-app">
                 <img src={logo} alt="Netflix Logo" className="logo"/>
             </Link>
             <div className="navigation">
