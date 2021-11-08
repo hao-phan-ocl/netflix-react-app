@@ -40,7 +40,6 @@ function LeftNav() {
                     {itemList.map(elem => (
                         <Link to={elem.link}>
                             <li key={elem.name}>{elem.name}</li>
-                            {/* <li>{elem}</li> */}
                         </Link>
                     ))}
                 </ul>
@@ -53,7 +52,6 @@ function LeftNav() {
                             {itemList.map(elem => (
                                 <Link to={elem.link}>
                                     <li key={elem.name}>{elem.name}</li>
-                                    {/* <li>{elem}</li> */}
                                 </Link>
                             ))}
                         </ul>
