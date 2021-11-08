@@ -1,4 +1,5 @@
 .navbar {
+    color: white;
     transition-duration: 1s;
     position: fixed;
     top: 0;   
@@ -22,6 +23,7 @@
             align-items: center;
         
             .logo {
+                display: flex;
                 width: clamp(2rem, 10vw, 7rem);
                 margin-right: clamp(1.1rem , 2vw, 4rem);
             }

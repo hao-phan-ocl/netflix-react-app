@@ -31,8 +31,8 @@ function SamplePrevArrow(props) {
   );
 }
 
-export default function Carousel() {
-    const [data] = useFetch(`${requests.trending}`, false);
+export default function Carousel({ data }) {
+    // const [data] = useFetch(`${requests.trending}`, false);
     const [slideData, setSlideData] = useState([]);
     const [openModal, setOpenModal] = useModal();
     
@@ -88,7 +88,7 @@ export default function Carousel() {
           <Slider {...settings} className="slider-container">
             {data.map(elem => (
               <div className="slide" key={elem.id}>
-                <img className="image" src={`https://image.tmdb.org/t/p/w500/${elem.backdrop_path}`} alt={elem.name || elem.title} />
+                <img className="image" src={requests.slideImage + elem.backdrop_path} alt={elem.name || elem.title} />
                 <div className="button-box">
                   <PlayCircleFilled className="play" type="button" />
                   <Info 

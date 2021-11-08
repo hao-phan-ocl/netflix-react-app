@@ -10,9 +10,15 @@ html {
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    background-color: black;
+}
+
+a {
+    color: white;
 }
 
 button {
+    text-decoration: none;
     cursor: pointer;
     border: none;
     outline: none;

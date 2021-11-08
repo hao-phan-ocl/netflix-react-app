@@ -1,12 +1,11 @@
 import { InfoOutlined, PlayArrow } from '@material-ui/icons';
-import useFetch from '../../customHooks/useFetch';
 import Modal from '../Modal/Modal';
 import './Billboard.scss';
 import requests from '../../api/requests';
 import useModal from '../../customHooks/useModal';
 
-export default function Billboard() {
-    const [data] = useFetch(`${requests.trending}`, true);
+export default function Billboard({ data }) {
+    // const [data] = useFetch(`${requests.trending}`, true);
     const [openModal, setOpenModal] = useModal();
     
     function truncate(string, num) {
@@ -17,8 +16,8 @@ export default function Billboard() {
         <div className="billboard">
             <img 
                 className="banner" 
-                src={`https://image.tmdb.org/t/p/original/${data?.backdrop_path}`} 
-                alt={ data?.name || data?.title }
+                src={requests.billboardImage + data?.backdrop_path} 
+                alt={data?.name || data?.title}
             />
             <div className="info-wrapper">
                 <div className="info-inner">

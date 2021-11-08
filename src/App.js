@@ -1,9 +1,19 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
-import Home from './pages/Home/Home';
+import Nav from './components/Nav/Nav';
+import Home from './pages/Home';
+import TvShows from './pages/TvShows';
+import Movies from './pages/Movies';
 
 export default function App() {
   return (
-    <Home />
+    <Router>
+        <Nav />
+        <Routes>
+         <Route path="/" element={<Home />} />
+         <Route path="/tvshows" element={<TvShows />} />
+         <Route path="/movies" element={<Movies />} />
+        </Routes>
+    </Router>
   )
 }

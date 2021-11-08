@@ -23,21 +23,36 @@ export default function Nav() {
 }
 
 function LeftNav() {
-    const itemList = (<>
-                        <li>Home</li>
-                        <li>TV Shows</li>
-                        <li>Movies</li>
-                        <li>My List</li>
-                    </>
-    );
+    // const itemList = (<>
+    //                     <li>Home</li>
+    //                     <li>TV Shows</li>
+    //                     <li>Movies</li>
+    //                     <li>My List</li>
+    //                 </>
+    // );
+
+    const itemList = [
+        {name: 'Home', link: '/'},
+        {name: 'TV Shows', link: '/tvshows'},
+        {name: 'Movies', link: '/movies'},
+        {name: 'My List', link: '/mylist'}
+    ]
+
+    // const itemList = ['Home' , 'TV Shows', 'Movies', 'My List']
 
     return (
         <div className="nav-left">
-            <img src={logo} alt="Netflix Logo" className="logo"/>
-            {/* <Link to="/"><img src={logo} alt="Netflix Logo" className="logo"/></Link> */}
+            <Link to="/">
+                <img src={logo} alt="Netflix Logo" className="logo"/>
+            </Link>
             <div className="navigation">
                 <ul className="navigation-large">
-                    {itemList}
+                    {itemList.map(elem => (
+                        <Link to={elem.link}>
+                            <li key={elem.name}>{elem.name}</li>
+                            {/* <li>{elem}</li> */}
+                        </Link>
+                    ))}
                 </ul>
                 <div className="navigation-small">
                     <div>Browse</div>
@@ -45,7 +60,12 @@ function LeftNav() {
                     <div className="nav-small-expand">
                         <ArrowDropUp />
                         <ul className="nav-small-expand-content">
-                            {itemList}
+                            {itemList.map(elem => (
+                                <Link to={elem.link}>
+                                    <li key={elem.name}>{elem.name}</li>
+                                    {/* <li>{elem}</li> */}
+                                </Link>
+                            ))}
                         </ul>
                     </div>
                 </div>
