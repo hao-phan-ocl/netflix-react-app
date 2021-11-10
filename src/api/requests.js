@@ -10,9 +10,7 @@ const requests = {
 
     movie_genres: `/genre/movie/list?api_key=${apiKey}&language=en-US`,
     tv_genres: `/genre/tv/list?api_key=${apiKey}&language=en-US`,
-    search: `/search/movie?api_key=${apiKey}&language=en-US&query=`
-    // movieList: `/discover/movie?api_key=${apiKey}&language=en-US&include_video=true&with_genres=&${genre_id}`,
-    // tvList: `/discover/tv?api_key=${apiKey}&language=en-US&include_video=true&with_genres=&${genre_id}`
+    search: `/search/multi?api_key=${apiKey}&language=en-US&query=`
 }
 
 export default requests;
