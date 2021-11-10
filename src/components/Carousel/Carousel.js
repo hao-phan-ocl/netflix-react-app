@@ -2,10 +2,9 @@ import './Carousel.scss';
 import Slider from 'react-slick';
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined, Info, PlayCircleFilled } from '@material-ui/icons';
 import { useState } from 'react';
-import useFetch from '../../customHooks/useFetch';
 import requests from '../../api/requests';
 import Modal from '../Modal/Modal';
-import useModal from '../../customHooks/useModal';
+import useModal from '../../store/useModal';
 
 function SampleNextArrow(props) {
   const { onClick } = props;
@@ -32,7 +31,6 @@ function SamplePrevArrow(props) {
 }
 
 export default function Carousel({ data }) {
-    // const [data] = useFetch(`${requests.trending}`, false);
     const [slideData, setSlideData] = useState([]);
     const [openModal, setOpenModal] = useModal();
     
