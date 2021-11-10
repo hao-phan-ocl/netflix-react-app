@@ -1,0 +1,43 @@
+.movie-card {
+    margin-bottom: 5rem;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+
+    .button-box {
+        display: none;
+    }
+
+    .image {
+        width: 100%;
+        height: 100%;
+        border-radius: 7px;
+    }
+
+    &:hover {
+        .image {
+            opacity: .3;
+        }
+
+        .button-box {
+            transform: scale(3.5);
+            display: block;
+            position: absolute;
+
+            .play {
+                margin-right: 5px;
+
+                &:hover {
+                    opacity: .6;
+                }
+            }
+
+            .info {
+                &:hover {
+                    opacity: .6;
+                }
+            }
+        }
+    }
+}
