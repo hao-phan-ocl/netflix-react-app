@@ -2,12 +2,11 @@ import { InfoOutlined, PlayArrow } from '@material-ui/icons';
 import Modal from '../Modal/Modal';
 import './Billboard.scss';
 import requests from '../../api/requests';
-import useModal from '../../customHooks/useModal';
+import useModal from '../../store/useModal';
 
 export default function Billboard({ data }) {
-    // const [data] = useFetch(`${requests.trending}`, true);
     const [openModal, setOpenModal] = useModal();
-    
+
     function truncate(string, num) {
         return string?.length > num ? string.slice(0, num) + '...' : string;
     }
@@ -46,5 +45,4 @@ export default function Billboard({ data }) {
         </div>
     )
 }
-
 
