@@ -1,15 +1,16 @@
 import logo from './Netflix_Logo_RGB.png';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { AccountBox, ArrowDropDown, ArrowDropUp, Search } from '@material-ui/icons';
 import './Nav.scss';
+import { SearchContext } from '../../store/SearchContext';
 
 export default function Nav() {
     const [atTopLevel, setAtTopLevel] = useState(false);
 
     window.onscroll = () => {
         setAtTopLevel(window.pageYOffset === 0 ? true : false)
-        // return () => (window.onscroll = null);
+        return () => (window.onscroll = null);
     }
 
     return (
@@ -25,9 +26,9 @@ export default function Nav() {
 function LeftNav() {
     const itemList = [
         {name: 'Home', link: '/netflix-react-app'},
-        {name: 'TV Shows', link: '/tvshows'},
-        {name: 'Movies', link: '/movies'},
-        {name: 'My List', link: '/mylist'}
+        {name: 'TV Shows', link: '/netflix-react-app/tvshows'},
+        {name: 'Movies', link: '/netflix-react-app/movies'},
+        {name: 'My List', link: '/netflix-react-app/mylist'}
     ]
 
     return (
@@ -38,8 +39,8 @@ function LeftNav() {
             <div className="navigation">
                 <ul className="navigation-large">
                     {itemList.map(elem => (
-                        <Link to={elem.link}>
-                            <li key={elem.name}>{elem.name}</li>
+                        <Link to={elem.link} key={elem.name}>
+                            <li>{elem.name}</li>
                         </Link>
                     ))}
                 </ul>
@@ -50,8 +51,8 @@ function LeftNav() {
                         <ArrowDropUp />
                         <ul className="nav-small-expand-content">
                             {itemList.map(elem => (
-                                <Link to={elem.link}>
-                                    <li key={elem.name}>{elem.name}</li>
+                                <Link to={elem.link} key={elem.name}>
+                                    <li>{elem.name}</li>
                                 </Link>
                             ))}
                         </ul>
@@ -64,19 +65,24 @@ function LeftNav() {
 
 function RightNav() {
     const [searchClicked, setSearchClicked] = useState(false);
-
+    const navigate = useNavigate();
+    const [searchText, setSearchText] = useContext(SearchContext);
     return (
         <div className="nav-right">
-            <div className={searchClicked ? "search-box-clicked" : "search-box"}>
+            <div className={searchClicked ? "search-box-clicked" : "search-box"} >
                 <Search className="search-icon" onClick={() => setSearchClicked(!searchClicked)} />
                 <input 
                     type="text" 
                     className="search-bar"
-                    placeholder="Search titles" 
-                    autoComplete="off" 
-                    autoFocus 
+                    placeholder="Search titles"
+                    autoComplete="off"
+                    autoFocus
+                    onChange={e => {
+                        setSearchText(e.target.value);
+                        navigate("/netflix-react-app/search");
+                    }}
                 />
-                </div>
+            </div>
             <div className="account-box">
                 <AccountBox className="profile"/>
                 <ArrowDropDown className="arrow-down" />
