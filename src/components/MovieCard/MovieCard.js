@@ -3,7 +3,7 @@ import { useState } from 'react';
 import requests from '../../api/requests';
 import useModal from '../../store/useModal';
 import Modal from '../Modal/Modal';
-import './MovieGrid.scss';
+import './MovieCard.scss';
 
 export default function Search({data}) {
     const [movieId, setMovieId] = useState([]);

@@ -1,7 +1,7 @@
 import { Container } from "@material-ui/core";
 import { useContext, useEffect, useState } from "react";
 import requests from "../api/requests";
-import MovieGrid from "../components/MovieGrid/MovieGrid";
+import MovieCard from "../components/MovieCard/MovieCard";
 import { SearchContext } from "../store/SearchContext";
 import useFetch from "../store/useFetch";
 
@@ -29,7 +29,7 @@ export default function Search() {
                 }}
             >
                 {searchText !== '' && hasImage.map(elem => (
-                    <MovieGrid data={elem} key={elem.id} />
+                    <MovieCard data={elem} key={elem.id} />
                 ))}
             </div>
         </Container>
