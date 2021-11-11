@@ -22,7 +22,6 @@ export default function Search({data}) {
                 className='movie-card'
             >
                 <img 
-                    // style={{width: '100%', height: '100%'}}
                     className="image"
                     src={requests.billboardImage + data?.backdrop_path} 
                     alt={data?.name || data?.title}
