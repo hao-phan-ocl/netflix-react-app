@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
 import Nav from './components/Nav/Nav';
 import Search from './pages/Search';
@@ -13,7 +13,6 @@ export default function App() {
     <Router>
         <Nav />
         <Routes>
-          {/* <Route path="/netflix-react-app" /> */}
           <Route path="/netflix-react-app" element={<Home />} />
           <Route path="/netflix-react-app/tvshows" element={<TvShows />} />
           <Route path="/netflix-react-app/movies" element={<Movies />} />
@@ -23,5 +22,3 @@ export default function App() {
     </SearchProvider>
   )
 }
-
-// element={<Navigate to="/home" />}

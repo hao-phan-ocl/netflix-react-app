@@ -1,4 +1,4 @@
-import { Container, Grid } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import { useContext, useEffect, useState } from "react";
 import requests from "../api/requests";
 import MovieGrid from "../components/MovieGrid/MovieGrid";
@@ -16,16 +16,22 @@ export default function Search() {
     }, [data])
 
     return (
-        <Container maxWidth={'xl'}>
-            <Grid 
-                container 
-                spacing={1} 
-                style={{marginTop: '5rem'}} 
+        <Container maxWidth={'xl'} style={{marginTop: '8rem'}}>
+            <div 
+                className="my-grid"
+                style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fill, 300px)',
+                    gridAutoRow: 'auto',
+                    rowGap: '70px',
+                    columnGap: '5px',
+                    justifyContent: 'center'
+                }}
             >
                 {searchText !== '' && hasImage.map(elem => (
-                    <MovieGrid data={elem} />
+                    <MovieGrid data={elem} key={elem.id} />
                 ))}
-            </Grid>
+            </div>
         </Container>
     )
 }

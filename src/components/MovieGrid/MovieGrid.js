@@ -1,4 +1,3 @@
-import { Grid } from '@material-ui/core';
 import { Info, PlayCircleFilled } from '@material-ui/icons';
 import { useState } from 'react';
 import requests from '../../api/requests';
@@ -12,15 +11,7 @@ export default function Search({data}) {
 
     return (
         <>
-            <Grid 
-                item 
-                xl={2} 
-                lg={2.4} 
-                md={3} 
-                sm={4} 
-                xs={6} 
-                className='movie-card'
-            >
+            <div className='movie-card' >
                 <img 
                     className="image"
                     src={requests.billboardImage + data?.backdrop_path} 
@@ -37,7 +28,7 @@ export default function Search({data}) {
                         }} 
                     />
                 </div>
-            </Grid>
+            </div>
             {openModal && <Modal data={movieId} setOpenModal={setOpenModal} />}
         </>
     )
