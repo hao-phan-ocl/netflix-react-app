@@ -1,4 +1,4 @@
-I am working on a NETFLIX Clone with API key from https://www.themoviedb.org/
+NETFLIX Clone webpage with API key from https://www.themoviedb.org/
 
 **Technologies**
 1.	React hooks (state, effect, context, custom hooks)
