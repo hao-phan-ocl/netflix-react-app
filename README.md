@@ -1,8 +1,12 @@
-NETFLIX Clone webpage with API key from https://www.themoviedb.org/
+NETFLIX Clone webpage
 
 The project is unfinished and ongoing (updated 11.11.2021)
 
 https://nguyenhaophan.github.io/netflix-react-app/
+
+**API**
+
+	The Movie Databse: https://www.themoviedb.org/
  
 **Technologies**
 
