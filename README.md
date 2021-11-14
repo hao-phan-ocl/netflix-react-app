@@ -18,9 +18,9 @@
 
 # Web’s structure
 
-	* DOM: root, modal 
+	* DOM: root, modal
 	* Pages: Home, Movies, TV Shows, My List, Search
-	* Components: Navbar, Billboard, Carousel, Movie card, Modal
+	* Components: Navbar, Billboard, Carousel, MovieCard, Modal
 
 # Future update with back-end development
 
