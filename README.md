@@ -13,6 +13,7 @@
 	2. React routers
 	3. React portal
 	4. Sass
+	5. Axios
 
 # Web’s structure
 
