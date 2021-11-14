@@ -14,7 +14,7 @@
 	* React portal
 	* Sass
 	* Axios
-	* Material UI
+	
 
 # Web’s structure
 
