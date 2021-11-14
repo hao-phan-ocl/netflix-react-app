@@ -1,6 +1,7 @@
 # Netflix Clone
 
 	The front-end of the web is finished, while the back-end is still on going
+	
 	https://nguyenhaophan.github.io/netflix-react-app/
 
 # API
