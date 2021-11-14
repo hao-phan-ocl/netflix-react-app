@@ -9,11 +9,15 @@
  
 # Technologies
 
-	* React hooks (state, effect, context, custom hooks)
-	* React routers
-	* React portal
-	* Sass
-	* Axios
+	React hooks (state, effect, context, custom hooks)
+	
+	React routers
+	
+	React portal
+	
+	Sass
+	
+	Axios
 	
 
 # Web’s structure
