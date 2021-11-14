@@ -1,8 +1,7 @@
-NETFLIX Clone webpage
+# NETFLIX Clone webpage
 
-The project is unfinished and ongoing (updated 11.11.2021)
-
-https://nguyenhaophan.github.io/netflix-react-app/
+	The front-end of the web is finished, while the back-end is still on going
+	https://nguyenhaophan.github.io/netflix-react-app/
 
 **API**
 
