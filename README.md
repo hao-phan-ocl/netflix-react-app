@@ -19,17 +19,21 @@
 	
 	Axios
 	
+	Material UI
 
 # Web’s structure
 
-	* DOM: root, modal
-	* Pages: Home, Movies, TV Shows, My List, Search
-	* Components: Navbar, Billboard, Carousel, MovieCard, Modal
+	DOM: root, modal
+
+	Pages: Home, Movies, TV Shows, My List, Search
+
+	Components: Navbar, Billboard, Carousel, MovieCard, Modal
 
 # Future update with back-end development
 
-	* Updating the “Add movie” function and display them in My List page.
-	* New login page with feature for users to create accounts. Each user will have their own account containing their added movies.
+	Updating the “Add movie” function and display them in My List page.
+
+	New login page with feature for users to create accounts. Each user will have their own account containing their added movies.
 
 # Note
 
