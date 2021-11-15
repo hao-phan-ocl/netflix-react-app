@@ -1,6 +1,6 @@
 # Netflix Clone
 
-	The front-end of the web is finished, while the back-end is still on going
+	The front-end is finished. The back-end is being built
 	
 	https://netflix-clone-148e4.web.app/
 
