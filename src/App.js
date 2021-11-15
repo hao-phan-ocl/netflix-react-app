@@ -13,10 +13,10 @@ export default function App() {
     <Router>
         <Nav />
         <Routes>
-          <Route path="/netflix-react-app" element={<Home />} />
-          <Route path="/netflix-react-app/tvshows" element={<TvShows />} />
-          <Route path="/netflix-react-app/movies" element={<Movies />} />
-          <Route path="/netflix-react-app/search" element={<Search />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/tvshows" element={<TvShows />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
     </Router>
     </SearchProvider>

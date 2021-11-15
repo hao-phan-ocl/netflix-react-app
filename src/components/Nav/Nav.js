@@ -25,15 +25,15 @@ export default function Nav() {
 
 function LeftNav() {
     const itemList = [
-        {name: 'Home', link: '/netflix-react-app'},
-        {name: 'TV Shows', link: '/netflix-react-app/tvshows'},
-        {name: 'Movies', link: '/netflix-react-app/movies'},
-        {name: 'My List', link: '/netflix-react-app/mylist'}
+        {name: 'Home', link: '/'},
+        {name: 'TV Shows', link: '/tvshows'},
+        {name: 'Movies', link: '/movies'},
+        {name: 'My List', link: '/mylist'}
     ]
 
     return (
         <div className="nav-left">
-            <Link to="/netflix-react-app">
+            <Link to="/">
                 <img src={logo} alt="Netflix Logo" className="logo"/>
             </Link>
             <div className="navigation">
@@ -79,7 +79,7 @@ function RightNav() {
                     autoFocus
                     onChange={e => {
                         setSearchText(e.target.value);
-                        navigate("/netflix-react-app/search");
+                        navigate("/search");
                     }}
                 />
             </div>
