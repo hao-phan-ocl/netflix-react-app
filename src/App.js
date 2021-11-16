@@ -1,24 +1,28 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
-import Nav from './components/Nav/Nav';
-import Search from './pages/Search';
-import Home from './pages/Home';
-import TvShows from './pages/TvShows';
-import Movies from './pages/Movies';
+import Search from './components/Search/Search';
+import Page from './components/Page/Page';
 import { SearchProvider } from './store/SearchContext';
+import requests from './api/requests';
+import Login from './components/Login/Login';
 
 export default function App() {
+  const user = true;
+
   return (
     <SearchProvider>
-    <Router>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/tvshows" element={<TvShows />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/search" element={<Search />} />
-        </Routes>
-    </Router>
+      <Router>
+        {!user ? (
+          <Login />
+        ) : (
+          <Routes>
+            <Route path="/" element={<Page fetchData={requests.trending} />} />
+            <Route path="/tvshows" element={<Page fetchData={requests.tvTrending} />} />
+            <Route path="/movies" element={<Page fetchData={requests.movieTrending}/>} />
+            <Route path="/search" element={<Search />} />
+          </Routes>
+        )}
+      </Router>
     </SearchProvider>
   )
 }
