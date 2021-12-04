@@ -1,37 +1,44 @@
-import { Alert } from '@mui/material'
+import { signOut } from '@firebase/auth'
 import { useContext, useRef, useState } from 'react'
+import logo from '../Nav/Netflix_Logo_RGB.png'
+import '../Login/Login.scss'
+import { Alert } from '@mui/material'
+import { auth } from '../../firebase/firebase'
 import { useNavigate } from 'react-router'
 import { UserContext } from '../../store/UserContext'
-import logo from '../Nav/Netflix_Logo_RGB.png'
-import './Login.scss'
 
-export default function Login() {
-    const {user, login} = useContext(UserContext)
+export default function Register() {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    
-    const emailRef = useRef()
-    const passwordRef = useRef()
-
+    const { signup } = useContext(UserContext)
     const navigate = useNavigate()
 
-    if (user)  {
-        navigate('/home')
-    }
-    
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const passwordConfirmRef = useRef()
+
     async function handleSubmit(e) {
         e.preventDefault()
+        
+        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+            return setError('Password do not match')
+        }
 
         try {
             setError('')
             setLoading(true)
-            await login(emailRef.current.value, passwordRef.current.value)
+            await signup(emailRef.current.value, passwordRef.current.value)
             navigate('/home')
         } catch (err) {
             setError(err.message.slice(10))
         }
 
         setLoading(false)
+    }
+
+    async function logout(e) {
+        e.preventDefault()
+        await signOut(auth)
     }
 
     return (
@@ -45,7 +52,7 @@ export default function Login() {
             <div className='login-wrapper'>
                 <div className='login-table'>
                     <form className='login-form'>
-                        <h1>Sign In</h1>
+                        <h1>Sign Up</h1>
                         {error && (
                             <Alert 
                                 severity='error'
@@ -53,11 +60,6 @@ export default function Login() {
                                 className='alert'
                             >
                                 {error}
-                            </Alert>
-                        )}
-                        {user && (
-                            <Alert severity='success' sx={{mb: 2, fontSize: 16}}>
-                                {user.email}
                             </Alert>
                         )}
                         <input 
@@ -70,19 +72,27 @@ export default function Login() {
                             placeholder='Password' autoComplete='off'
                             ref={passwordRef}
                         />
+                        <input 
+                            type='password' className='btn'
+                            placeholder='Password Confirmation' autoComplete='off'
+                            ref={passwordConfirmRef}
+                        />
                         <button className='sign-in btn' disabled={loading} onClick={handleSubmit}>
-                            {loading ? 'Loading...' : 'Sign In'}
+                            {loading ? 'Loading...' : 'Sign Up'}
+                        </button>
+                        <button className='sign-in btn' onClick={logout}>
+                            Log Out
                         </button>
                         <div className='text-box'>
-                            <h2 className='text' >New to Netflix?</h2>
+                            <h2 className='text' >Already a member?</h2>
                             <h2 
                                 className='text light' 
                                 onClick={() => {
                                     setError('')
-                                    navigate('/register')
+                                    navigate('/')
                                 }} 
                             >
-                                Sign up now
+                                Sign in
                             </h2>
                         </div>
                     </form>

@@ -43,7 +43,7 @@
                 }
 
                 .btn {
-                    min-width: 320px;
+                    width: 320px;
                     border-radius: 4px;
                     color: white;
                     font-size: 18px;
@@ -96,6 +96,10 @@
         }
 
         .btn {
+            width: 100% !important;
+        }
+
+        .alert {
             width: 100%;
         }
     }

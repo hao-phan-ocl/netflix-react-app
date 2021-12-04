@@ -198,12 +198,21 @@
                         top: 2.5rem;
                         flex-direction: column;
                         background-color: black;
-                        width: 12rem;
+                        width: 17rem;
                         text-align: left;
                         padding: .4rem;
                                         
                         div {
-                            margin: 5px;
+                            font-size: 1.2rem;
+                            margin: 10px 7px;
+                        }
+
+                        .logout {
+                            margin-top: 8px;
+
+                            &:hover {
+                                opacity: .5;
+                            }
                         }
                     }
                 }
