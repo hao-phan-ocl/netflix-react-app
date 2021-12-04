@@ -36,11 +36,6 @@ export default function Register() {
         setLoading(false)
     }
 
-    async function logout(e) {
-        e.preventDefault()
-        await signOut(auth)
-    }
-
     return (
         <div className='login' >
             <img 
@@ -79,9 +74,6 @@ export default function Register() {
                         />
                         <button className='sign-in btn' disabled={loading} onClick={handleSubmit}>
                             {loading ? 'Loading...' : 'Sign Up'}
-                        </button>
-                        <button className='sign-in btn' onClick={logout}>
-                            Log Out
                         </button>
                         <div className='text-box'>
                             <h2 className='text' >Already a member?</h2>
