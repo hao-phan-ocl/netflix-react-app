@@ -1,12 +1,12 @@
-import { Add, Cancel, PlayArrow } from '@material-ui/icons';
-import { useState, useEffect } from 'react';
-import reactDom from 'react-dom';
-import instance from '../../api/axiosInstance';
-import requests from '../../api/requests';
-import './Modal.scss';
+import { Add, Cancel, PlayArrow } from '@material-ui/icons'
+import { useState, useEffect } from 'react'
+import reactDom from 'react-dom'
+import instance from '../../api/axiosInstance'
+import requests from '../../api/requests'
+import './Modal.scss'
 
 export default function Modal({ setOpenModal, data }) {
-    const [genres, setGenres] = useState([]);
+    const [genres, setGenres] = useState([])
     
     useEffect(() => {
         async function fetchGenres () {
@@ -14,13 +14,13 @@ export default function Modal({ setOpenModal, data }) {
                 data?.media_type === 'movie'? 
                 requests.movie_genres: 
                 requests.tv_genres
-            );
+            )
             setGenres(
                 res.data.genres.filter(elem => data?.genre_ids.includes(elem.id))
-            );
+            )
         }
-        fetchGenres();
-    }, [data]);
+        fetchGenres()
+    }, [data])
 
     return reactDom.createPortal(
         <div className="modal">
@@ -64,5 +64,5 @@ export default function Modal({ setOpenModal, data }) {
             </div>
         </div>,
         document.getElementById('modal')
-    );
+    )
 }

@@ -17,7 +17,7 @@
         width: 36%;
 
         .movie-title {
-            color: goldenrod;
+            color: red;
             font-size: 3vw;
             margin: .6rem 0;
         }
@@ -26,6 +26,9 @@
             font-size: 1.2vw;
             font-weight: 400;
             text-align: justify;
+            background-color: rgba($color: black, $alpha: .2);
+            padding: 7px;
+            border-radius: 5px;
         }
 
         .button-box {

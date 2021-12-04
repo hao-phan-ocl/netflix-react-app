@@ -1,13 +1,13 @@
-import './Carousel.scss';
-import Slider from 'react-slick';
-import { ArrowBackIosOutlined, ArrowForwardIosOutlined, Info, PlayCircleFilled } from '@material-ui/icons';
-import { useState } from 'react';
-import requests from '../../api/requests';
-import Modal from '../Modal/Modal';
-import useModal from '../../store/useModal';
+import './Carousel.scss'
+import Slider from 'react-slick'
+import { ArrowBackIosOutlined, ArrowForwardIosOutlined, Info, PlayCircleFilled } from '@material-ui/icons'
+import { useState } from 'react'
+import requests from '../../api/requests'
+import Modal from '../Modal/Modal'
+import useModal from '../../store/useModal'
 
 function SampleNextArrow(props) {
-  const { onClick } = props;
+  const { onClick } = props
   return (
     <div
       className="arrow next"
@@ -15,11 +15,11 @@ function SampleNextArrow(props) {
     >
       <ArrowForwardIosOutlined />
     </div>
-  );
+  )
 }
 
 function SamplePrevArrow(props) {
-  const { onClick } = props;
+  const { onClick } = props
   return (
     <div
       className="arrow prev"
@@ -27,12 +27,12 @@ function SamplePrevArrow(props) {
     >
       <ArrowBackIosOutlined />
     </div>
-  );
+  )
 }
 
 export default function Carousel({ data }) {
-    const [slideData, setSlideData] = useState([]);
-    const [openModal, setOpenModal] = useModal();
+    const [slideData, setSlideData] = useState([])
+    const [openModal, setOpenModal] = useModal()
     
     const settings = {
         dots: false,
@@ -93,8 +93,8 @@ export default function Carousel({ data }) {
                     className="info" 
                     type="button" 
                     onClick={() => {
-                      setOpenModal(true);
-                      setSlideData(elem);
+                      setOpenModal(true)
+                      setSlideData(elem)
                     }}
                   />  
                 </div>
