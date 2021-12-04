@@ -15,8 +15,8 @@ export default function Login() {
 
     const navigate = useNavigate()
 
-    if (user)  {
-        navigate('/home')
+    if (!user)  {
+        navigate('/')
     }
     
     async function handleSubmit(e) {
