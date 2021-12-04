@@ -2,7 +2,7 @@
 
 	The front-end is finished. The back-end is being built
 	
-	https://netflix-clone-148e4.web.app/
+	https://gallant-feynman-9d5302.netlify.app
 
 # API
 
@@ -16,7 +16,7 @@
 	
 	React portal
 
-	Firebase hosting
+	Firebase
 	
 	Sass
 	
