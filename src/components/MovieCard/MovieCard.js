@@ -1,17 +1,17 @@
-import { Info, PlayCircleFilled } from '@material-ui/icons';
-import { useState } from 'react';
-import requests from '../../api/requests';
-import useModal from '../../store/useModal';
-import Modal from '../Modal/Modal';
-import './MovieCard.scss';
+import { Info, PlayCircleFilled } from '@material-ui/icons'
+import { useState } from 'react'
+import requests from '../../api/requests'
+import useModal from '../../store/useModal'
+import Modal from '../Modal/Modal'
+import './MovieCard.scss'
 
 export default function Search({data}) {
-    const [movieId, setMovieId] = useState([]);
-    const [openModal, setOpenModal] = useModal();
+    const [movieId, setMovieId] = useState([])
+    const [openModal, setOpenModal] = useModal()
 
     return (
         <>
-            <div className='movie-card' >
+            <div className='movie-card'>
                 <img 
                     className="image"
                     src={requests.billboardImage + data?.backdrop_path} 
@@ -23,8 +23,8 @@ export default function Search({data}) {
                         className="info" 
                         type="button" 
                         onClick={() => {
-                            setOpenModal(true);
-                            setMovieId(data);
+                            setOpenModal(true)
+                            setMovieId(data)
                         }} 
                     />
                 </div>
