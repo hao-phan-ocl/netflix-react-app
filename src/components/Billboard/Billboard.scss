@@ -17,18 +17,17 @@
         width: 36%;
 
         .movie-title {
-            color: red;
+            color: white;
             font-size: 3vw;
             margin: .6rem 0;
+            text-shadow: #000 0 0 10px;
         }
 
         .description {
             font-size: 1.2vw;
             font-weight: 400;
             text-align: justify;
-            background-color: rgba($color: black, $alpha: .2);
-            padding: 7px;
-            border-radius: 5px;
+            text-shadow: #000 0 0 10px;
         }
 
         .button-box {

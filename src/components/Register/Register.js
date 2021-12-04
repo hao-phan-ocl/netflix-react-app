@@ -1,9 +1,7 @@
-import { signOut } from '@firebase/auth'
 import { useContext, useRef, useState } from 'react'
 import logo from '../Nav/Netflix_Logo_RGB.png'
 import '../Login/Login.scss'
 import { Alert } from '@mui/material'
-import { auth } from '../../firebase/firebase'
 import { useNavigate } from 'react-router'
 import { UserContext } from '../../store/UserContext'
 
