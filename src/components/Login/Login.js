@@ -15,7 +15,7 @@ export default function Login() {
     const passwordRef = useRef()
 
     if (user)  {
-        navigate(-1)
+        navigate('/')
     }
     
     async function handleSubmit(e) {

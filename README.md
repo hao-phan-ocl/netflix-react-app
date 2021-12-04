@@ -2,7 +2,7 @@
 
 	The front-end is finished. The back-end is being built
 	
-	https://gallant-feynman-9d5302.netlify.app
+	https://react-movies-app-867b0.web.app/
 
 # API
 
