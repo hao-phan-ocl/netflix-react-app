@@ -14,7 +14,7 @@ export default function App() {
   function PrivateRoutes() {
     const {user} = useContext(UserContext)
 
-    return user ? <Outlet /> : <Navigate to='/' />
+    return user ? <Outlet /> : <Navigate to='/login' />
   }
 
   return (
@@ -22,10 +22,10 @@ export default function App() {
       <Router>
         <Nav />
         <Routes>
-          <Route path='/' element={<Login />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route element={<PrivateRoutes />} >
-            <Route path='/home' element={<Page fetchData={requests.trending} />} />
+            <Route path='/' element={<Page fetchData={requests.trending} />} />
             <Route path='/tvshows' element={<Page fetchData={requests.tvTrending} />} />
             <Route path='/movies' element={<Page fetchData={requests.movieTrending}/>} />
             <Route path='/search' element={<Search />} />

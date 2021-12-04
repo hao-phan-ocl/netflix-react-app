@@ -9,14 +9,13 @@ export default function Login() {
     const {user, login} = useContext(UserContext)
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    
+    const navigate = useNavigate()
+
     const emailRef = useRef()
     const passwordRef = useRef()
 
-    const navigate = useNavigate()
-
-    if (!user)  {
-        navigate('/')
+    if (user)  {
+        navigate(-1)
     }
     
     async function handleSubmit(e) {
@@ -26,7 +25,7 @@ export default function Login() {
             setError('')
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
-            navigate('/home')
+            navigate('/')
         } catch (err) {
             setError(err.message.slice(10))
         }

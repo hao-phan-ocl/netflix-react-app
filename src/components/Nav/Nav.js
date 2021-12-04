@@ -28,7 +28,7 @@ export default function Nav() {
 
 function LeftNav() {
     const itemList = [
-        {name: 'Home', link: '/home'},
+        {name: 'Home', link: '/'},
         {name: 'TV Shows', link: '/tvshows'},
         {name: 'Movies', link: '/movies'},
         {name: 'My List', link: '/mylist'}
@@ -36,7 +36,7 @@ function LeftNav() {
 
     return (
         <div className="nav-left">
-            <Link to="/home">
+            <Link to="/">
                 <img src={logo} alt="Netflix Logo" className="logo"/>
             </Link>
             <div className="navigation">
@@ -73,7 +73,7 @@ function RightNav() {
 
     async function handleOnClick() {
         await logout()
-        navigate('/')
+        navigate('/login')
     }
 
     return (

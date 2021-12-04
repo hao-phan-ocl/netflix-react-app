@@ -8,12 +8,16 @@ import { UserContext } from '../../store/UserContext'
 export default function Register() {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const { signup } = useContext(UserContext)
+    const { signup, user } = useContext(UserContext)
     const navigate = useNavigate()
 
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
+
+    if (user)  {
+        navigate(-1)
+    }
 
     async function handleSubmit(e) {
         e.preventDefault()
