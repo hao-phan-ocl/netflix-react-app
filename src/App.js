@@ -11,19 +11,15 @@ import { useContext } from 'react'
 import { UserContext } from './store/UserContext'
 
 export default function App() {
-  function PrivateRoutes() {
-    const {user} = useContext(UserContext)
-
-    return user ? <Outlet /> : <Navigate to='/login' />
-  }
-
   return (
     <ContextProvider>
       <Router>
         <Nav />
         <Routes>
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
+          <Route element={<PublicRoutes />} >
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+          </Route>
           <Route element={<PrivateRoutes />} >
             <Route path='/' element={<Page fetchData={requests.trending} />} />
             <Route path='/tvshows' element={<Page fetchData={requests.tvTrending} />} />
@@ -34,4 +30,16 @@ export default function App() {
       </Router>
     </ContextProvider>
   )
+}
+
+function PrivateRoutes() {
+  const {user} = useContext(UserContext)
+    
+  return user ? <Outlet /> : <Navigate to='/login' />
+}
+
+function PublicRoutes() {
+  const {user} = useContext(UserContext)
+      
+  return !user ? <Outlet /> : <Navigate to='/' /> 
 }
