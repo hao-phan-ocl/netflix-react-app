@@ -12,6 +12,7 @@ export const UserContext = createContext()
 export function ContextProvider({children}) {
     const [searchText, setSearchText] = useState('')
     const [user, setUser] = useState()
+    const [loadingPage, setLoadingPage] = useState(true)
     
     function login(email, password) {
         return signInWithEmailAndPassword(auth, email, password)
@@ -26,15 +27,14 @@ export function ContextProvider({children}) {
     }
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, user => {
+        onAuthStateChanged(auth, user => {
             setUser(user)
+            if (!user) setLoadingPage(false)
         })
-
-        return unsubscribe
     }, [])
-
+    
     return (
-        <UserContext.Provider value={{searchText, setSearchText, user, signup, login, logout}}>
+        <UserContext.Provider value={{searchText, setSearchText, user, signup, login, logout, loadingPage}}>
             {children}
         </UserContext.Provider>
     )

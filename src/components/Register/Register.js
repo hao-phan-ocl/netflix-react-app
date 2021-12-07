@@ -4,11 +4,12 @@ import '../Login/Login.scss'
 import { Alert } from '@mui/material'
 import { useNavigate } from 'react-router'
 import { UserContext } from '../../store/UserContext'
+import LoadingPage from '../LoadingPage/LoadingPage'
 
 export default function Register() {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const { signup } = useContext(UserContext)
+    const { signup, loadingPage } = useContext(UserContext)
     const navigate = useNavigate()
 
     const emailRef = useRef()
@@ -35,6 +36,7 @@ export default function Register() {
     }
 
     return (
+        loadingPage ? <LoadingPage /> :
         <div className='login' >
             <img 
                 src='https://assets.nflxext.com/ffe/siteui/vlv3/5dd45df7-33f1-4274-97ea-e9c6aca69dad/4aaa6dea-d066-49de-86b3-02982cd68812/FI-en-20211108-popsignuptwoweeks-perspective_alpha_website_large.jpg' 

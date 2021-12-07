@@ -2,21 +2,18 @@ import { Alert } from '@mui/material'
 import { useContext, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { UserContext } from '../../store/UserContext'
+import LoadingPage from '../LoadingPage/LoadingPage'
 import logo from '../Nav/Netflix_Logo_RGB.png'
 import './Login.scss'
 
 export default function Login() {
-    const {user, login} = useContext(UserContext)
+    const {user, login, loadingPage} = useContext(UserContext)
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
-
+    
     const emailRef = useRef()
     const passwordRef = useRef()
-
-    if (user)  {
-        navigate('/')
-    }
     
     async function handleSubmit(e) {
         e.preventDefault()
@@ -26,6 +23,7 @@ export default function Login() {
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
             navigate('/')
+            
         } catch (err) {
             setError(err.message.slice(10))
         }
@@ -34,6 +32,7 @@ export default function Login() {
     }
 
     return (
+        loadingPage ? <LoadingPage />  :
         <div className='login' >
             <img 
                 src='https://assets.nflxext.com/ffe/siteui/vlv3/5dd45df7-33f1-4274-97ea-e9c6aca69dad/4aaa6dea-d066-49de-86b3-02982cd68812/FI-en-20211108-popsignuptwoweeks-perspective_alpha_website_large.jpg' 
