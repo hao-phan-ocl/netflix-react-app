@@ -41,5 +41,5 @@ function PrivateRoutes() {
 function PublicRoutes() {
   const {user} = useContext(UserContext)
       
-  return !user ? <Outlet /> : <Navigate to='/' /> 
+  return !user ? <Outlet /> : <Navigate to={-1} /> 
 }

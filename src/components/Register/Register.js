@@ -9,7 +9,7 @@ import LoadingPage from '../LoadingPage/LoadingPage'
 export default function Register() {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const { signup, loadingPage } = useContext(UserContext)
+    const {signup, loadingPage} = useContext(UserContext)
     const navigate = useNavigate()
 
     const emailRef = useRef()
