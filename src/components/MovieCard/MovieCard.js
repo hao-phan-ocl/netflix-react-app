@@ -5,7 +5,7 @@ import useModal from '../../store/useModal'
 import Modal from '../Modal/Modal'
 import './MovieCard.scss'
 
-export default function Search({data}) {
+export default function MovieCard({data}) {
     const [movieId, setMovieId] = useState([])
     const [openModal, setOpenModal] = useModal()
 
