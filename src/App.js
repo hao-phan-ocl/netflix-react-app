@@ -9,6 +9,7 @@ import Nav from './components/Nav/Nav'
 import Register from './components/Register/Register'
 import { useContext } from 'react'
 import { UserContext } from './store/UserContext'
+import MyList from './components/MyList/MyList'
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
             <Route path='/tvshows' element={<Page fetchData={requests.tvTrending} />} />
             <Route path='/movies' element={<Page fetchData={requests.movieTrending}/>} />
             <Route path='/search' element={<Search />} />
+            <Route path='/mylist' element={<MyList />} />
           </Route>
         </Routes>
       </Router>

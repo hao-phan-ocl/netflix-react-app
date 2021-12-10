@@ -1,12 +1,14 @@
 import { Add, Cancel, PlayArrow } from '@material-ui/icons'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import reactDom from 'react-dom'
 import instance from '../../api/axiosInstance'
 import requests from '../../api/requests'
+import { UserContext } from '../../store/UserContext'
 import './Modal.scss'
 
 export default function Modal({ setOpenModal, data }) {
     const [genres, setGenres] = useState([])
+    const {addToMyList} = useContext(UserContext)
     
     useEffect(() => {
         async function fetchGenres () {
@@ -21,6 +23,15 @@ export default function Modal({ setOpenModal, data }) {
         }
         fetchGenres()
     }, [data])
+    
+    async function handleAdd() {
+        try {
+            await addToMyList(data)
+            alert('Added')
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     return reactDom.createPortal(
         <div className="modal">
@@ -41,7 +52,7 @@ export default function Modal({ setOpenModal, data }) {
                                 <PlayArrow className="icon"/>
                                 Play
                             </button>
-                            <button className="add">
+                            <button className="add" onClick={handleAdd}>
                                 <Add className="icon"/>
                                 My List
                             </button>
