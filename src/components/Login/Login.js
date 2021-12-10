@@ -23,7 +23,6 @@ export default function Login() {
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
             navigate('/')
-            
         } catch (err) {
             setError(err.message.slice(10))
         }
