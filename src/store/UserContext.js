@@ -60,7 +60,7 @@ export function ContextProvider({children}) {
             unsub = onSnapshot(doc(db, 'users', user.uid), snapshot => {
                 if (snapshot.exists()) {
                     setWatchlist(snapshot.data().movies)
-                }
+                } else setWatchlist([])
             })
         }
         
