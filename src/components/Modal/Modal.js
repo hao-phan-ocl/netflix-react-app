@@ -1,4 +1,4 @@
-import { Add, Cancel, PlayArrow } from '@material-ui/icons'
+import { AddCircleOutline, Cancel, CheckCircleOutline, PlayArrow } from '@material-ui/icons'
 import { useState, useEffect, useContext } from 'react'
 import reactDom from 'react-dom'
 import instance from '../../api/axiosInstance'
@@ -8,7 +8,9 @@ import './Modal.scss'
 
 export default function Modal({ setOpenModal, data }) {
     const [genres, setGenres] = useState([])
-    const {addToMyList} = useContext(UserContext)
+    const {addMovie, removeMovie, watchlist} = useContext(UserContext)
+
+    const inWatchlist = watchlist?.map(elem => elem.id).includes(data.id)
     
     useEffect(() => {
         async function fetchGenres () {
@@ -26,8 +28,15 @@ export default function Modal({ setOpenModal, data }) {
     
     async function handleAdd() {
         try {
-            await addToMyList(data)
-            alert('Added')
+            await addMovie(data)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    async function handleRemove() {
+        try {
+            await removeMovie(data)
         } catch (err) {
             console.log(err)
         }
@@ -52,10 +61,21 @@ export default function Modal({ setOpenModal, data }) {
                                 <PlayArrow className="icon"/>
                                 Play
                             </button>
-                            <button className="add" onClick={handleAdd}>
-                                <Add className="icon"/>
-                                My List
-                            </button>
+                            {inWatchlist ? (
+                                <div className='add'>
+                                    <CheckCircleOutline onClick={handleRemove} />
+                                    <div className="add-hover" style={{width: '7rem', left: '-2.5rem'}}>
+                                        Remove from My List
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className='add'>
+                                    <AddCircleOutline onClick={handleAdd} />
+                                    <div className="add-hover" style={{width: '5.2rem', left: '-1.7rem'}}>
+                                        Add to My List
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

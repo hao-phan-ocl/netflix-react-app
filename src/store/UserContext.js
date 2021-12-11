@@ -28,30 +28,36 @@ export function ContextProvider({children}) {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
+    function addMovie(movie) {
+        if (!watchlist) {
+            return setDoc(doc(db, 'users', user.uid), {
+                movies: [movie]    
+            })    
+        } else if (!watchlist.find(elem => elem.id === movie.id)) {
+            return setDoc(doc(db, 'users', user.uid), {
+                movies: [...watchlist, movie]
+            })    
+        }
+    }
+
+    function removeMovie(movie) {
+        return setDoc(doc(db, 'users', user.uid), {
+            movies: watchlist.filter(elem => elem.id !== movie.id)
+        })
+    }
+
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             setUser(user)
             if (!user) setLoadingPage(false)
         })
     }, [])
-
-    function addToMyList(movie) {
-        if (!watchlist) {
-            return setDoc(doc(db, 'watchlist', user.uid), {
-                movies: [movie]    
-            })    
-        } else if (!watchlist.find(elem => elem === movie)) {
-            return setDoc(doc(db, 'watchlist', user.uid), {
-                movies: [...watchlist, movie]
-            })    
-        }
-    }
     
     useEffect(() => {
         let unsub
            
         if (user) {
-            unsub = onSnapshot(doc(db, 'watchlist', user.uid), snapshot => {
+            unsub = onSnapshot(doc(db, 'users', user.uid), snapshot => {
                 if (snapshot.exists()) {
                     setWatchlist(snapshot.data().movies)
                 }
@@ -70,9 +76,10 @@ export function ContextProvider({children}) {
             login, 
             logout, 
             loadingPage, 
-            addToMyList, 
+            addMovie, 
             setWatchlist,
-            watchlist
+            watchlist,
+            removeMovie
         }}>
             {children}
         </UserContext.Provider>

@@ -5,9 +5,9 @@ import MovieCard from "../MovieCard/MovieCard"
 
 export default function MyList() {
     const {watchlist} = useContext(UserContext)
-    
+    console.log(watchlist)
     return (
-        !watchlist ? (
+        !watchlist.length ? (
             <div style={{
                 color: 'white',
                 marginTop: '7rem',
@@ -18,7 +18,7 @@ export default function MyList() {
                 Your watchlist is empty...
             </div>
         ) : (
-            <Container maxWidth={'xl'} style={{marginTop: '8rem'}}>
+            <Container maxWidth={'xl'} style={{margin: '8rem 1.5rem'}}>
                 <div 
                     className="my-grid"
                     style={{
@@ -27,10 +27,10 @@ export default function MyList() {
                         gridAutoRow: 'auto',
                         rowGap: '70px',
                         columnGap: '5px',
-                        justifyContent: 'center'
+                        justifyContent: 'start'
                     }}
                 >
-                    {watchlist.map(elem => (
+                    {watchlist?.map(elem => (
                         <MovieCard data={elem} key={elem.id} />
                     ))}
                 </div>

@@ -23,11 +23,15 @@
         .close {
             cursor: pointer;
             position: absolute;
-            right: 10px;
-            top: 10px;
-            transform: scale(1.7);
-            color: #313131;
+            right: 1.5rem;
+            top: 1.5rem;
+            transform: scale(2);
+            color: rgb(194, 194, 194);
             z-index: 10;
+
+            &:hover {
+                color: gray;
+            }
         }
 
         .banner-and-info {
@@ -52,13 +56,14 @@
 
                 .button-box {
                     display: flex;
+                    align-items: center;
 
                     button {
                         display: flex;
                         align-items: center;
                         border-radius: 5px;
                         padding: .5rem 1.5rem;
-                        margin-right: 1rem;
+                        margin-right: 2rem;
                         font-weight: 500;
                         font-size: 1.5rem;
                         font-family: 'Open Sans', sans-serif;
@@ -69,17 +74,49 @@
                         }
                     }
 
-                    .add {
-                        color: white;
-                        background-color: rgba(109, 109, 110, .9);
-                    }
+                        .add {
+                            cursor: pointer;
+                            color: rgb(226, 226, 226);
+                            transform: scale(2.3);
+                            display: flex;
+                            flex-direction: column;
+
+                            .add-hover {
+                                display: none;
+                            }
+                                
+                            &:hover {
+                                .add {
+                                    opacity: .6;
+                                }
+
+                                .add-hover {
+                                    font-size: .6rem;
+                                    font-weight: 600;
+                                    padding: 3px;
+                                    color: black;
+                                    background-color: rgb(219, 219, 219);
+                                    display: flex;
+                                    position: absolute;
+                                    justify-content: center;
+                                    border-radius: 3px;
+                                    bottom: 1.8rem;
+                                    z-index: 999;
+                                }
+                            }
+                        }
 
                     @media screen and (max-width: 560px) {
                         button {
                             font-size: 1.1rem;
                             padding: .4rem 1rem;
                             border-radius: 3px;
-                            margin-right: .5rem;
+                            margin-right: 1rem;
+                        }
+
+                        .add {
+                            color: white;
+                            transform: scale(2);
                         }
                     }
 
