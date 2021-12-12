@@ -5,7 +5,7 @@ import MovieCard from "../MovieCard/MovieCard"
 
 export default function MyList() {
     const {watchlist} = useContext(UserContext)
-    console.log(watchlist)
+    
     return (
         !watchlist.length ? (
             <div style={{
