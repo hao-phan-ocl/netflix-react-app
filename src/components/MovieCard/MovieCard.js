@@ -1,6 +1,6 @@
 import { Info, PlayCircleFilled } from '@material-ui/icons'
 import { useState } from 'react'
-import requests from '../../api/requests'
+import { requests } from '../../api/requests'
 import useModal from '../../store/useModal'
 import Modal from '../Modal/Modal'
 import './MovieCard.scss'

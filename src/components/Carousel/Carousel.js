@@ -2,9 +2,10 @@ import './Carousel.scss'
 import Slider from 'react-slick'
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined, Info, PlayCircleFilled } from '@material-ui/icons'
 import { useState } from 'react'
-import requests from '../../api/requests'
+import { requests } from '../../api/requests'
 import Modal from '../Modal/Modal'
 import useModal from '../../store/useModal'
+import useHasImage from '../../store/useHasImage'
 
 function SampleNextArrow(props) {
   const { onClick } = props
@@ -30,9 +31,10 @@ function SamplePrevArrow(props) {
   )
 }
 
-export default function Carousel({ data }) {
+export default function Carousel({ data, text }) {
     const [slideData, setSlideData] = useState([])
     const [openModal, setOpenModal] = useModal()
+    const [hasImage] = useHasImage(data)
     
     const settings = {
         dots: false,
@@ -82,9 +84,9 @@ export default function Carousel({ data }) {
 
     return (            
         <div className="carousel">
-          <h2 className="title"> Trending </h2>
+          <h2 className="title">{text}</h2>
           <Slider {...settings} className="slider-container">
-            {data.map(elem => (
+            {hasImage.map(elem => (
               <div className="slide" key={elem.id}>
                 <img className="image" src={requests.slideImage + elem.backdrop_path} alt={elem.name || elem.title} />
                 <div className="button-box">

@@ -1,7 +1,7 @@
 import { InfoOutlined, PlayArrow } from '@material-ui/icons'
 import Modal from '../Modal/Modal'
 import './Billboard.scss'
-import requests from '../../api/requests'
+import { requests } from '../../api/requests'
 import useModal from '../../store/useModal'
 
 export default function Billboard({ data }) {

@@ -2,7 +2,7 @@ import { AddCircleOutline, Cancel, CheckCircleOutline, PlayArrow } from '@materi
 import { useState, useEffect, useContext } from 'react'
 import reactDom from 'react-dom'
 import instance from '../../api/axiosInstance'
-import requests from '../../api/requests'
+import { requests } from '../../api/requests'
 import { UserContext } from '../../store/UserContext'
 import './Modal.scss'
 
