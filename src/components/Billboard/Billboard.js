@@ -40,7 +40,8 @@ export default function Billboard({ data }) {
                         </button>
                     </div>
                 </div>
-            </div>            
+            </div>         
+            <div className="banner-shadow" />
             {openModal && <Modal setOpenModal={setOpenModal} data={data} />}
         </div>
     )
