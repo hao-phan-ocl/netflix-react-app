@@ -11,7 +11,7 @@ export default function TvShows({fetchData}) {
     const [tvAdventure] = useFetch(fetchData.tvAdventure, false)
     const [tvComedy] = useFetch(fetchData.tvComedy, false)
     const [tvDrama] = useFetch(fetchData.tvDrama, false)
-
+    
     return (
         <div className="page"> 
             <Billboard data={billboardData} />
