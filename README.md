@@ -1,6 +1,6 @@
 # Netflix Clone
 
-	Netlfix Clone allows users to create account, search movies and add to watchlist
+	Netlfix Clone allows users to create account, search movies, watch trailers and add watchlist
 	
 	https://react-movies-app-867b0.web.app/
 
