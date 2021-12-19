@@ -4,18 +4,22 @@ import reactDom from 'react-dom'
 import instance from '../../api/axiosInstance'
 import { requests } from '../../api/requests'
 import { UserContext } from '../../store/UserContext'
+import useVideo from '../../store/useVideo'
+import Video from '../Video/Video'
 import './Modal.scss'
 
-export default function Modal({ setOpenModal, data }) {
+export default function Modal({ setOpenModal, data, mediaType }) {
     const [genres, setGenres] = useState([])
     const {addMovie, removeMovie, watchlist} = useContext(UserContext)
+console.log(data)
+    const [openVideo, setOpenVideo] = useVideo()
 
     const inWatchlist = watchlist?.map(elem => elem.id).includes(data.id)
     
     useEffect(() => {
         async function fetchGenres () {
             const res = await instance.get(
-                data?.media_type === 'movie'? 
+                mediaType === 'movie'? 
                 requests.movie_genres: 
                 requests.tv_genres
             )
@@ -24,7 +28,7 @@ export default function Modal({ setOpenModal, data }) {
             )
         }
         fetchGenres()
-    }, [data])
+    }, [data, mediaType])
     
     async function handleAdd() {
         try {
@@ -43,6 +47,7 @@ export default function Modal({ setOpenModal, data }) {
     }
 
     return reactDom.createPortal(
+        <>
         <div className="modal">
             <div className="modal-content">
                 <Cancel className="close" onClick={() => setOpenModal(false)}/>
@@ -57,8 +62,8 @@ export default function Modal({ setOpenModal, data }) {
                             {data?.name || data?.title}
                         </h1>
                         <div className="button-box">
-                            <button type="button" className="play">
-                                <PlayArrow className="icon"/>
+                            <button className="play" onClick={() => setOpenVideo(true)}>
+                                <PlayArrow className="icon" />
                                 Play
                             </button>
                             {inWatchlist ? (
@@ -93,7 +98,10 @@ export default function Modal({ setOpenModal, data }) {
                     </div>
                 </div>
             </div>
-        </div>,
+            
+        </div>
+        {openVideo && <Video setOpenVideo={setOpenVideo} data={data} mediaType={mediaType} /> }
+        </>,
         document.getElementById('modal')
     )
 }

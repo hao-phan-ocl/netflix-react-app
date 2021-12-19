@@ -7,10 +7,10 @@ export default function useFetch(url, isBillboard) {
     useEffect(() => {       
         async function fetchData() {
             const request = await instance.get(url)
-
+            
             isBillboard ? 
             setData(request.data.results[Math.floor(Math.random() * request.data.results.length)]) :
-            setData(request.data.results)           
+            setData(request.data.results)  
         }
         fetchData()
     }, [url, isBillboard])

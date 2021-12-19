@@ -6,6 +6,8 @@ import { requests } from '../../api/requests'
 import Modal from '../Modal/Modal'
 import useModal from '../../store/useModal'
 import useHasImage from '../../store/useHasImage'
+import useVideo from '../../store/useVideo'
+import Video from '../Video/Video'
 
 function SampleNextArrow(props) {
   const { onClick } = props
@@ -31,11 +33,12 @@ function SamplePrevArrow(props) {
   )
 }
 
-export default function Carousel({ data, text }) {
+export default function Carousel({ data, text, mediaType }) {
     const [slideData, setSlideData] = useState([])
     const [openModal, setOpenModal] = useModal()
     const [hasImage] = useHasImage(data)
-    
+    const [openVideo, setOpenVideo] = useVideo()
+        
     const settings = {
         dots: false,
         infinite: true,
@@ -90,10 +93,15 @@ export default function Carousel({ data, text }) {
               <div className="slide" key={elem.id}>
                 <img className="image" src={requests.slideImage + elem.backdrop_path} alt={elem.name || elem.title} />
                 <div className="button-box">
-                  <PlayCircleFilled className="play" type="button" />
+                  <PlayCircleFilled 
+                    className="play" 
+                    onClick={() => {
+                      setOpenVideo(true)
+                      setSlideData(elem)
+                    }}
+                  />
                   <Info 
-                    className="info" 
-                    type="button" 
+                    className="info"  
                     onClick={() => {
                       setOpenModal(true)
                       setSlideData(elem)
@@ -103,7 +111,8 @@ export default function Carousel({ data, text }) {
               </div>
             ))}
           </Slider>
-          {openModal && <Modal setOpenModal={setOpenModal} data={slideData} />}
+          {openModal && <Modal setOpenModal={setOpenModal} data={slideData} mediaType={mediaType} />}
+          {openVideo && <Video setOpenVideo={setOpenVideo} data={slideData} mediaType={mediaType} /> }
         </div>
     )
 }

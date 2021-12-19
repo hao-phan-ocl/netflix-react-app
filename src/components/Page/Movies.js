@@ -15,13 +15,13 @@ export default function Movies({fetchData}) {
     return (
         <div className="page"> 
             <Billboard data={billboardData} />
-            <Carousel data={movieTopRated} text={'Top Rated Movies'} />
-            <Carousel data={movieNetflix} text={'Netflix Originals'} />
-            <Carousel data={movieDocumentary} text={'Documentary'} />
-            <Carousel data={movieRomance} text={'Romance'} />
-            <Carousel data={movieCrime} text={'Crime'} />
-            <Carousel data={movieWestern} text={'Wertern'} />
-            <Carousel data={movieHorror} text={'Horror'} />
+            <Carousel data={movieTopRated} text={'Top Rated Movies'} mediaType={'movie'} />
+            <Carousel data={movieNetflix} text={'Netflix Originals'} mediaType={'movie'} />
+            <Carousel data={movieDocumentary} text={'Documentary'} mediaType={'movie'} />
+            <Carousel data={movieRomance} text={'Romance'} mediaType={'movie'} />
+            <Carousel data={movieCrime} text={'Crime'} mediaType={'movie'} />
+            <Carousel data={movieWestern} text={'Wertern'} mediaType={'movie'} />
+            <Carousel data={movieHorror} text={'Horror'} mediaType={'movie'} />
         </div>
     )
 }

@@ -1,0 +1,19 @@
+.player {
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgba($color: black, $alpha: .7);
+
+    .player-content {
+        display: flex;
+        width: 80rem;
+        height: 45rem;
+        margin: 10rem 2rem;
+    }
+}

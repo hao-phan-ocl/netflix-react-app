@@ -15,7 +15,7 @@ export function ContextProvider({children}) {
     const [user, setUser] = useState()
     const [loadingPage, setLoadingPage] = useState(true)
     const [watchlist, setWatchlist] = useState([])
-    
+        
     function login(email, password) {
         return signInWithEmailAndPassword(auth, email, password)
     }
@@ -79,7 +79,7 @@ export function ContextProvider({children}) {
             addMovie, 
             setWatchlist,
             watchlist,
-            removeMovie
+            removeMovie,
         }}>
             {children}
         </UserContext.Provider>

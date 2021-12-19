@@ -5,7 +5,8 @@ export const requests = {
     slideImage: 'https://image.tmdb.org/t/p/w500/',
     movie_genres: `/genre/movie/list?api_key=${apiKey}&language=en-US`,
     tv_genres: `/genre/tv/list?api_key=${apiKey}&language=en-US`,
-    search: `/search/multi?api_key=${apiKey}&include_adult=false&language=en-US&query=`
+    search: `/search/multi?api_key=${apiKey}&include_adult=false&language=en-US&query=`,
+    video: `/videos?api_key=${apiKey}&language=en-US`
 }
 
 export const homeRequests = {

@@ -3,10 +3,13 @@ import Modal from '../Modal/Modal'
 import './Billboard.scss'
 import { requests } from '../../api/requests'
 import useModal from '../../store/useModal'
+import Video from '../Video/Video'
+import useVideo from '../../store/useVideo'
 
 export default function Billboard({ data }) {
     const [openModal, setOpenModal] = useModal()
-    
+    const [openVideo, setOpenVideo] = useVideo()
+
     function truncate(string, num) {
         return string?.length > num ? string.slice(0, num) + '...' : string
     }
@@ -27,13 +30,13 @@ export default function Billboard({ data }) {
                         {truncate(data?.overview, 200)}
                     </h3>
                     <div className="button-box">
-                        <button className="play">
-                            <PlayArrow className="icon"/>
+                        <button className="play" onClick={() => setOpenVideo(true)}>
+                            <PlayArrow className="icon" />
                             Play
                         </button>
                         <button 
                             className="info" 
-                            onClick={() => {setOpenModal(true)}}
+                            onClick={() => setOpenModal(true)}
                         > 
                             <InfoOutlined className="icon"/>
                             More Info
@@ -43,7 +46,7 @@ export default function Billboard({ data }) {
             </div>         
             <div className="banner-shadow" />
             {openModal && <Modal setOpenModal={setOpenModal} data={data} />}
+            {openVideo && <Video setOpenVideo={setOpenVideo} data={data} />}
         </div>
     )
 }
-
