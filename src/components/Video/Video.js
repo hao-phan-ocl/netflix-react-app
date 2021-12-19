@@ -4,8 +4,8 @@ import { requests } from '../../api/requests'
 import useFetch from '../../store/useFetch'
 import './Video.scss'
 
-export default function Video({data, setOpenVideo, mediaType}) {
-    const [videos] = useFetch(`${data.media_type || mediaType}/${data.id}` + requests.video)
+export default function Video({data, setOpenVideo}) {
+    const [videos] = useFetch(`${'movie' || 'tv'}/${data.id}` + requests.video)
     const youtubeKey = videos[Math.floor(Math.random() * videos.length)]?.key
 
     return reactDom.createPortal(

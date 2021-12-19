@@ -15,13 +15,13 @@ export default function Home({fetchData}) {
     return (
         <div className="page"> 
             <Billboard data={billboardData} />
-            <Carousel data={scienceFiction} text={'Science Fiction'} mediaType={'movie'} />
-            <Carousel data={thriller} text={'Thriller'} mediaType={'movie'} />
-            <Carousel data={drama} text={'Drama'} mediaType={'movie'} />
-            <Carousel data={animation} text={'Animation'} mediaType={'movie'} />
-            <Carousel data={family} text={'Family'} mediaType={'tv'} />
-            <Carousel data={kid} text={'Kids'} mediaType={'tv'} />
-            <Carousel data={mystery} text={'Mystery'} mediaType={'tv'} />
+            <Carousel data={scienceFiction} text={'Science Fiction'} />
+            <Carousel data={thriller} text={'Thriller'} />
+            <Carousel data={drama} text={'Drama'} />
+            <Carousel data={animation} text={'Animation'} />
+            <Carousel data={family} text={'Family'} />
+            <Carousel data={kid} text={'Kids'} />
+            <Carousel data={mystery} text={'Mystery'} />
         </div>
     )
 }

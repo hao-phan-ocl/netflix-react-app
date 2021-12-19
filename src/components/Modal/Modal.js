@@ -8,10 +8,10 @@ import useVideo from '../../store/useVideo'
 import Video from '../Video/Video'
 import './Modal.scss'
 
-export default function Modal({ setOpenModal, data, mediaType }) {
+export default function Modal({ setOpenModal, data }) {
     const [genres, setGenres] = useState([])
     const {addMovie, removeMovie, watchlist} = useContext(UserContext)
-console.log(data)
+
     const [openVideo, setOpenVideo] = useVideo()
 
     const inWatchlist = watchlist?.map(elem => elem.id).includes(data.id)
@@ -19,8 +19,7 @@ console.log(data)
     useEffect(() => {
         async function fetchGenres () {
             const res = await instance.get(
-                mediaType === 'movie'? 
-                requests.movie_genres: 
+                requests.movie_genres || 
                 requests.tv_genres
             )
             setGenres(
@@ -28,7 +27,7 @@ console.log(data)
             )
         }
         fetchGenres()
-    }, [data, mediaType])
+    }, [data])
     
     async function handleAdd() {
         try {
@@ -97,7 +96,7 @@ console.log(data)
                     </div>
                 </div>
             </div>
-            {openVideo && <Video setOpenVideo={setOpenVideo} data={data} mediaType={mediaType} /> }
+            {openVideo && <Video setOpenVideo={setOpenVideo} data={data} /> }
         </div>,
         document.getElementById('modal')
     )

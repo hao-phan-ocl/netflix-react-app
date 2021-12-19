@@ -33,7 +33,7 @@ function SamplePrevArrow(props) {
   )
 }
 
-export default function Carousel({ data, text, mediaType }) {
+export default function Carousel({ data, text }) {
     const [slideData, setSlideData] = useState([])
     const [openModal, setOpenModal] = useModal()
     const [hasImage] = useHasImage(data)
@@ -111,8 +111,8 @@ export default function Carousel({ data, text, mediaType }) {
               </div>
             ))}
           </Slider>
-          {openModal && <Modal setOpenModal={setOpenModal} data={slideData} mediaType={mediaType} />}
-          {openVideo && <Video setOpenVideo={setOpenVideo} data={slideData} mediaType={mediaType} /> }
+          {openModal && <Modal setOpenModal={setOpenModal} data={slideData} />}
+          {openVideo && <Video setOpenVideo={setOpenVideo} data={slideData} /> }
         </div>
     )
 }

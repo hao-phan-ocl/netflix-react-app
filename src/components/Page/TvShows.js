@@ -15,13 +15,13 @@ export default function TvShows({fetchData}) {
     return (
         <div className="page"> 
             <Billboard data={billboardData} />
-            <Carousel data={tvTopRated} text={'Top Rated TV Shows'} mediaType={'tv'} />
-            <Carousel data={tvNetflix} text={'Netflix Originals'} mediaType={'tv'} />
-            <Carousel data={tvDocumentary} text={'Documentary'} mediaType={'tv'} />
-            <Carousel data={tvAnimation} text={'Animation'} mediaType={'tv'} />
-            <Carousel data={tvAdventure} text={'Action & Adventure'} mediaType={'tv'} />
-            <Carousel data={tvComedy} text={'Comedy'} mediaType={'tv'} />
-            <Carousel data={tvDrama} text={'Drama'} mediaType={'tv'} />
+            <Carousel data={tvTopRated} text={'Top Rated TV Shows'} />
+            <Carousel data={tvNetflix} text={'Netflix Originals'} />
+            <Carousel data={tvDocumentary} text={'Documentary'} />
+            <Carousel data={tvAnimation} text={'Animation'} />
+            <Carousel data={tvAdventure} text={'Action & Adventure'} />
+            <Carousel data={tvComedy} text={'Comedy'} />
+            <Carousel data={tvDrama} text={'Drama'} />
         </div>
     )
 }
