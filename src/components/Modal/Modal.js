@@ -47,7 +47,6 @@ console.log(data)
     }
 
     return reactDom.createPortal(
-        <>
         <div className="modal">
             <div className="modal-content">
                 <Cancel className="close" onClick={() => setOpenModal(false)}/>
@@ -98,10 +97,8 @@ console.log(data)
                     </div>
                 </div>
             </div>
-            
-        </div>
-        {openVideo && <Video setOpenVideo={setOpenVideo} data={data} mediaType={mediaType} /> }
-        </>,
+            {openVideo && <Video setOpenVideo={setOpenVideo} data={data} mediaType={mediaType} /> }
+        </div>,
         document.getElementById('modal')
     )
 }

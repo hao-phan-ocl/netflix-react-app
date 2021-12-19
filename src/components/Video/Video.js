@@ -17,4 +17,3 @@ export default function Video({data, setOpenVideo, mediaType}) {
         document.getElementById('modal')
     )
 }
-// width='1280px' height='720px'
