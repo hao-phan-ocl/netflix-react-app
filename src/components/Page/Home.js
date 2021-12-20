@@ -3,14 +3,14 @@ import Carousel from '../Carousel/Carousel'
 import useFetch from '../../store/useFetch'
 
 export default function Home({fetchData}) {
-    const [billboardData] = useFetch(fetchData.trending, true)
-    const [scienceFiction] = useFetch(fetchData.scienceFiction, false)
-    const [thriller] = useFetch(fetchData.thriller, false)
-    const [drama] = useFetch(fetchData.drama, false)
-    const [animation] = useFetch(fetchData.animation, false)
-    const [family] = useFetch(fetchData.family, false)
-    const [kid] = useFetch(fetchData.kid, false)
-    const [mystery] = useFetch(fetchData.mystery, false)
+    const [billboardData] = useFetch(fetchData.trending, 'billboard')
+    const [scienceFiction] = useFetch(fetchData.scienceFiction, 'carousel', 'movie')
+    const [thriller] = useFetch(fetchData.thriller, 'carousel', 'movie')
+    const [drama] = useFetch(fetchData.drama, 'carousel', 'movie')
+    const [animation] = useFetch(fetchData.animation, 'carousel', 'movie')
+    const [family] = useFetch(fetchData.family, 'carousel', 'tv')
+    const [kid] = useFetch(fetchData.kid, 'carousel', 'tv')
+    const [mystery] = useFetch(fetchData.mystery, 'carousel', 'tv')
 
     return (
         <div className="page"> 

@@ -8,7 +8,7 @@ import useHasImage from "../../store/useHasImage"
 
 export default function Search() {
     const {searchText} = useContext(UserContext)
-    const [data] = useFetch(requests.search + searchText, false)
+    const [data] = useFetch(requests.search + searchText, 'search')
     const [hasImage] = useHasImage(data)
 
     return (

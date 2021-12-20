@@ -3,14 +3,14 @@ import Carousel from '../Carousel/Carousel'
 import useFetch from '../../store/useFetch'
 
 export default function TvShows({fetchData}) {
-    const [billboardData] = useFetch(fetchData.tvTrending, true)
-    const [tvTopRated] = useFetch(fetchData.tvTopRated, false)
-    const [tvNetflix] = useFetch(fetchData.tvNetflix, false)
-    const [tvDocumentary] = useFetch(fetchData.tvDocumentary, false)
-    const [tvAnimation] = useFetch(fetchData.tvAnimation, false)
-    const [tvAdventure] = useFetch(fetchData.tvAdventure, false)
-    const [tvComedy] = useFetch(fetchData.tvComedy, false)
-    const [tvDrama] = useFetch(fetchData.tvDrama, false)
+    const [billboardData] = useFetch(fetchData.tvTrending, 'billboard')
+    const [tvTopRated] = useFetch(fetchData.tvTopRated, 'carousel', 'tv')
+    const [tvNetflix] = useFetch(fetchData.tvNetflix, 'carousel', 'tv')
+    const [tvDocumentary] = useFetch(fetchData.tvDocumentary, 'carousel', 'tv')
+    const [tvAnimation] = useFetch(fetchData.tvAnimation, 'carousel', 'tv')
+    const [tvAdventure] = useFetch(fetchData.tvAdventure, 'carousel', 'tv')
+    const [tvComedy] = useFetch(fetchData.tvComedy, 'carousel', 'tv')
+    const [tvDrama] = useFetch(fetchData.tvDrama, 'carousel', 'tv')
     
     return (
         <div className="page"> 

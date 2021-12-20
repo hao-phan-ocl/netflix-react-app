@@ -3,14 +3,14 @@ import Carousel from '../Carousel/Carousel'
 import useFetch from '../../store/useFetch'
 
 export default function Movies({fetchData}) {
-    const [billboardData] = useFetch(fetchData.movieTrending, true)
-    const [movieTopRated] = useFetch(fetchData.movieTopRated, false)
-    const [movieNetflix] = useFetch(fetchData.movieNetflix, false)
-    const [movieDocumentary] = useFetch(fetchData.movieDocumentary, false)
-    const [movieRomance] = useFetch(fetchData.movieRomance, false)
-    const [movieCrime] = useFetch(fetchData.movieCrime, false)
-    const [movieWestern] = useFetch(fetchData.movieWestern, false)
-    const [movieHorror] = useFetch(fetchData.movieHorror, false)
+    const [billboardData] = useFetch(fetchData.movieTrending, 'billboard')
+    const [movieTopRated] = useFetch(fetchData.movieTopRated, 'carousel', 'movie')
+    const [movieNetflix] = useFetch(fetchData.movieNetflix, 'carousel', 'movie')
+    const [movieDocumentary] = useFetch(fetchData.movieDocumentary, 'carousel', 'movie')
+    const [movieRomance] = useFetch(fetchData.movieRomance, 'carousel', 'movie')
+    const [movieCrime] = useFetch(fetchData.movieCrime, 'carousel', 'movie')
+    const [movieWestern] = useFetch(fetchData.movieWestern, 'carousel', 'movie')
+    const [movieHorror] = useFetch(fetchData.movieHorror, 'carousel', 'movie')
 
     return (
         <div className="page"> 

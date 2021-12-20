@@ -1,13 +1,10 @@
 import './Carousel.scss'
 import Slider from 'react-slick'
-import { ArrowBackIosOutlined, ArrowForwardIosOutlined, Info, PlayCircleFilled } from '@material-ui/icons'
-import { useState } from 'react'
+import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from '@material-ui/icons'
 import { requests } from '../../api/requests'
-import Modal from '../Modal/Modal'
-import useModal from '../../store/useModal'
 import useHasImage from '../../store/useHasImage'
-import useVideo from '../../store/useVideo'
-import Video from '../Video/Video'
+import PlayButton from '../PlayButton/PlayButton'
+import InfoButton from '../InfoButton/InfoButton'
 
 function SampleNextArrow(props) {
   const { onClick } = props
@@ -34,10 +31,7 @@ function SamplePrevArrow(props) {
 }
 
 export default function Carousel({ data, text }) {
-    const [slideData, setSlideData] = useState([])
-    const [openModal, setOpenModal] = useModal()
     const [hasImage] = useHasImage(data)
-    const [openVideo, setOpenVideo] = useVideo()
         
     const settings = {
         dots: false,
@@ -86,33 +80,19 @@ export default function Carousel({ data, text }) {
     }
 
     return (            
-        <div className="carousel">
-          <h2 className="title">{text}</h2>
-          <Slider {...settings} className="slider-container">
-            {hasImage.map(elem => (
-              <div className="slide" key={elem.id}>
-                <img className="image" src={requests.slideImage + elem.backdrop_path} alt={elem.name || elem.title} />
-                <div className="button-box">
-                  <PlayCircleFilled 
-                    className="play" 
-                    onClick={() => {
-                      setOpenVideo(true)
-                      setSlideData(elem)
-                    }}
-                  />
-                  <Info 
-                    className="info"  
-                    onClick={() => {
-                      setOpenModal(true)
-                      setSlideData(elem)
-                    }}
-                  />  
-                </div>
+      <div className="carousel">
+        <h2 className="title">{text}</h2>
+        <Slider {...settings} className="slider-container">
+          {hasImage.map(elem => (
+            <div className="slide" key={elem.id}>
+              <img className="image" src={requests.slideImage + elem.backdrop_path} alt={elem.name || elem.title} />
+              <div className="button-box">
+                <PlayButton buttonSize={'small'} data={elem} />
+                <InfoButton buttonSize={'small'} data={elem} />
               </div>
-            ))}
-          </Slider>
-          {openModal && <Modal setOpenModal={setOpenModal} data={slideData} />}
-          {openVideo && <Video setOpenVideo={setOpenVideo} data={slideData} /> }
-        </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
     )
 }

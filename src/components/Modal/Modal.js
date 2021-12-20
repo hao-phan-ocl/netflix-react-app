@@ -1,18 +1,15 @@
-import { AddCircleOutline, Cancel, CheckCircleOutline, PlayArrow } from '@material-ui/icons'
+import { AddCircleOutline, Cancel, CheckCircleOutline } from '@material-ui/icons'
 import { useState, useEffect, useContext } from 'react'
 import reactDom from 'react-dom'
 import instance from '../../api/axiosInstance'
 import { requests } from '../../api/requests'
 import { UserContext } from '../../store/UserContext'
-import useVideo from '../../store/useVideo'
-import Video from '../Video/Video'
+import PlayButton from '../PlayButton/PlayButton'
 import './Modal.scss'
 
 export default function Modal({ setOpenModal, data }) {
     const [genres, setGenres] = useState([])
     const {addMovie, removeMovie, watchlist} = useContext(UserContext)
-
-    const [openVideo, setOpenVideo] = useVideo()
 
     const inWatchlist = watchlist?.map(elem => elem.id).includes(data.id)
     
@@ -60,10 +57,7 @@ export default function Modal({ setOpenModal, data }) {
                             {data?.name || data?.title}
                         </h1>
                         <div className="button-box">
-                            <button className="play" onClick={() => setOpenVideo(true)}>
-                                <PlayArrow className="icon" />
-                                Play
-                            </button>
+                            <PlayButton buttonSize={'large'} data={data} />
                             {inWatchlist ? (
                                 <div className='add'>
                                     <CheckCircleOutline onClick={handleRemove} />
@@ -96,7 +90,6 @@ export default function Modal({ setOpenModal, data }) {
                     </div>
                 </div>
             </div>
-            {openVideo && <Video setOpenVideo={setOpenVideo} data={data} /> }
         </div>,
         document.getElementById('modal')
     )
