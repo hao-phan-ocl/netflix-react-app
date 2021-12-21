@@ -18,7 +18,7 @@ export default function MyList() {
                 Your watchlist is empty...
             </div>
         ) : (
-            <Container maxWidth={'xl'} style={{margin: '8rem 1.5rem'}}>
+            <Container maxWidth={'xl'} style={{padding: '8rem 1.5rem'}}>
                 <div 
                     className="my-grid"
                     style={{

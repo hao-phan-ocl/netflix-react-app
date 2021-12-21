@@ -41,10 +41,12 @@ function LeftNav() {
             </Link>
             <div className="navigation">
                 <ul className="navigation-large">
-                    {itemList.map(elem => (
-                        <Link to={elem.link} key={elem.name}>
-                            <li>{elem.name}</li>
-                        </Link>
+                    {itemList.map((elem, index) => (
+                        <li key={index}>
+                            <Link to={elem.link}>
+                                {elem.name}
+                            </Link>
+                        </li>
                     ))}
                 </ul>
                 <div className="navigation-small">
@@ -53,10 +55,12 @@ function LeftNav() {
                     <div className="nav-small-expand">
                         <ArrowDropUp />
                         <ul className="nav-small-expand-content">
-                            {itemList.map(elem => (
-                                <Link to={elem.link} key={elem.name}>
-                                    <li>{elem.name}</li>
-                                </Link>
+                            {itemList.map((elem, index) => (
+                                <li key={index}>
+                                    <Link to={elem.link}>
+                                        {elem.name}
+                                    </Link>
+                                </li>
                             ))}
                         </ul>
                     </div>
@@ -87,7 +91,7 @@ function RightNav() {
                     autoComplete="off"
                     autoFocus
                     onChange={e => {
-                        setSearchText(e.target.value)
+                        setSearchText(e.target.value)    
                         navigate(`/search?q=${e.target.value}`)
                     }}
                 />

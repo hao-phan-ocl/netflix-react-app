@@ -8,7 +8,16 @@
         object-fit: cover;
     }
 
-    .banner-shadow {
+    .banner-shadow-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5rem;
+        background-image: linear-gradient(180deg, rgba(0,0,0,.7) 10%, transparent);
+    }
+
+    .banner-shadow-bottom {
         position: absolute;
         bottom: 0;
         left: 0;

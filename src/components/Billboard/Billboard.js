@@ -28,8 +28,9 @@ export default function Billboard({ data }) {
                         <InfoButton buttonSize={'large'} data={data} />
                     </div>
                 </div>
-            </div>         
-            <div className="banner-shadow" />
+            </div>
+            <div className="banner-shadow-top" />
+            <div className="banner-shadow-bottom" />
         </div>
     )
 }
