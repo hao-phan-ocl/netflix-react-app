@@ -12,6 +12,7 @@ import MyList from './components/MyList/MyList'
 import Movies from './components/Page/Movies'
 import TvShows from './components/Page/TvShows'
 import Home from './components/Page/Home'
+import Footer from './components/Footer/Footer'
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
             <Route path='/mylist' element={<MyList />} />
           </Route>
         </Routes>
+        <Footer />
       </Router>
     </ContextProvider>
   )

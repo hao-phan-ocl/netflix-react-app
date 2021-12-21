@@ -1,0 +1,44 @@
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+    font-size: 1.5rem;
+    flex-direction: column;
+    height: 5.5rem;
+
+    .footer-wrapper {
+        margin-right: 10px;
+
+        .span-1 {
+            margin-right: 5px;
+            color: #969696;
+        }
+
+        .span-2 {
+            color: white;
+            text-shadow: #000 0 0 10px;
+        }
+    }
+
+    .icon-box {
+        display: flex;
+        color: white;
+        cursor: pointer;
+
+        .icon {
+            margin-right: 1.7rem;
+            transform: scale(1.7);
+            transition: .5s;
+
+            &:first-child {
+                transform: scale(2);
+            }
+
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+}
