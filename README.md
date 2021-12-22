@@ -29,7 +29,11 @@
 # Preview
 
 ![login](images/login.png)
+
 ![homepage](images/homepage.png)
+
 ![modal](images/modal.png)
+
 ![video](images/video.png)
+
 ![search](images/search.png)
