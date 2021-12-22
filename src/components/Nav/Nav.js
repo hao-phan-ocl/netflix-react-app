@@ -1,6 +1,6 @@
 import logo from './Netflix_Logo_RGB.png'
 import { useContext, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { AccountBox, ArrowDropDown, ArrowDropUp, Search } from '@material-ui/icons'
 import './Nav.scss'
 import { UserContext } from '../../store/UserContext'
@@ -43,9 +43,9 @@ function LeftNav() {
                 <ul className="navigation-large">
                     {itemList.map((elem, index) => (
                         <li key={index}>
-                            <Link to={elem.link}>
+                            <NavLink to={elem.link} className={({isActive}) => isActive ? 'active' : undefined}>
                                 {elem.name}
-                            </Link>
+                            </NavLink>
                         </li>
                     ))}
                 </ul>
@@ -57,9 +57,9 @@ function LeftNav() {
                         <ul className="nav-small-expand-content">
                             {itemList.map((elem, index) => (
                                 <li key={index}>
-                                    <Link to={elem.link}>
+                                    <NavLink to={elem.link} className={({isActive}) => isActive ? 'active' : undefined}>
                                         {elem.name}
-                                    </Link>
+                                    </NavLink>
                                 </li>
                             ))}
                         </ul>

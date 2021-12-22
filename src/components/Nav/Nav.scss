@@ -31,6 +31,26 @@
             .navigation {
                 margin: 0;
                 padding: 0;
+                color: #dadada;
+
+                .active {
+                    color: white;
+                    font-weight: 600;
+                    cursor: default;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    transition: 0.5s;
+        
+                    &:hover {
+                        opacity: .6;
+                    }
+                }
 
                 .navigation-small {
                     display: none;
@@ -43,15 +63,6 @@
                         display: inline-block;
                         margin-right: clamp(.8rem , 2vw, 3rem);
                         text-shadow: #000 0 0 10px;
-                    }
-            
-                    a {
-                        text-decoration: none;
-                        transition: 0.5s;
-            
-                        &:hover {
-                            color: #b1b1b1;
-                        }
                     }
                 }
 
@@ -68,15 +79,6 @@
                         li {
                             list-style: none;
                             margin-left: clamp(1.1rem , 2vw, 4rem);
-                        }
-                        
-                        a {
-                            text-decoration: none;
-                            transition: 0.5s;
-            
-                            &:hover {
-                                color: #b1b1b1;
-                            }   
                         }
 
                         .nav-small-expand {
