@@ -1,7 +1,6 @@
 # Netflix Clone
 
-	Netlfix Clone is a fully responsive web app that allows users to create account, 
-	search movies, watch trailers and add watchlist
+	Netlfix Clone allows users to create account, search movies, watch trailers and add watchlist
 	
 	https://react-movies-app-867b0.web.app/
 
@@ -10,6 +9,8 @@
 	The Movie Databse: https://www.themoviedb.org/
  
 # Technologies
+
+	React
 
 	React hooks
 	
@@ -24,3 +25,7 @@
 	Axios
 	
 	Material UI
+
+# Preview
+
+	
