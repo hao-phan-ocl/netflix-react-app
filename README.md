@@ -4,6 +4,14 @@
 	
 	https://react-movies-app-867b0.web.app/
 
+# Test Account
+
+	In case you do not want to create an account
+
+	Email: test@gmail.com
+
+	Password: 123456
+
 # API
 
 	The Movie Databse: https://www.themoviedb.org/
