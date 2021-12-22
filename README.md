@@ -28,12 +28,12 @@
 
 # Preview
 
-![login](images/login.png)
+![login](src/images/login.png)
 
-![homepage](images/homepage.png)
+![homepage](src/images/homepage.png)
 
-![modal](images/modal.png)
+![modal](src/images/modal.png)
 
-![video](images/video.png)
+![video](src/images/video.png)
 
-![search](images/search.png)
+![search](src/images/search.png)
