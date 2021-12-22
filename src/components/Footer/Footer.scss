@@ -6,7 +6,7 @@
     margin-bottom: 4rem;
     font-size: 1.5rem;
     flex-direction: column;
-    height: 5.8rem;
+    height: 5.6rem;
 
     .footer-wrapper {
         margin-right: 10px;
@@ -17,6 +17,7 @@
         }
 
         .span-2 {
+            font-weight: 550;
             color: white;
             text-shadow: #000 0 0 10px;
         }
@@ -29,11 +30,11 @@
 
         .icon {
             margin-right: 1.7rem;
-            transform: scale(1.7);
+            transform: scale(1.5);
             transition: .5s;
 
             &:first-child {
-                transform: scale(2);
+                transform: scale(1.8);
             }
 
             &:hover {
