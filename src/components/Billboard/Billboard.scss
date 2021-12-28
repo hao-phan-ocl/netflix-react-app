@@ -75,6 +75,7 @@
 
         .button-box {
             display: flex;
+            gap: 1rem;
             
             button {
                 display: flex;
@@ -84,10 +85,6 @@
                 font-weight: 500;
                 font-size: clamp(0.7rem, 1.3vw, 1.7rem);
                 font-family: 'Open Sans', sans-serif;
-            }
-
-            .play {
-                margin-right: 1rem;
             }
 
             .info {
