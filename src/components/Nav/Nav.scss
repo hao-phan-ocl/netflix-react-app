@@ -22,11 +22,11 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            gap: clamp(1.1rem, 2vw, 4rem);
         
             .logo {
                 display: flex;
                 width: clamp(2rem, 10vw, 7rem);
-                margin-right: clamp(1.1rem , 2vw, 4rem);
             }
         
             .navigation {
