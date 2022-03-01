@@ -10,9 +10,9 @@
 
 	Searching movies
 
-	Trailer watching
+	Watching trailers
 
-	Watchlist adding
+	Adding watchlists
 
 # Test Account
 
