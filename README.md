@@ -1,8 +1,18 @@
 # Netflix Clone
-
-	Netlfix Clone allows users to create account, search movies, watch trailers and add watchlist
 	
 	https://react-movies-app-867b0.web.app/
+
+# Features
+
+	Fully responsive website cloning Netflix's interface
+
+	Creating account
+
+	Searching movies
+
+	Trailer watching
+
+	Watchlist adding
 
 # Test Account
 
@@ -12,9 +22,9 @@
 
 	Password: 123456
 
-# API
+# The Movie Databse API
 
-	The Movie Databse: https://www.themoviedb.org/
+	https://www.themoviedb.org/
  
 # Technologies
 
