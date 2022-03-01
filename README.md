@@ -4,7 +4,7 @@
 
 # Features
 
-	Fully responsive website cloning Netflix's interface
+	Fully responsive
 
 	Creating account
 
