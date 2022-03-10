@@ -26,15 +26,13 @@
 
 	https://www.themoviedb.org/
  
-# Technologies
+# Technology Stacks
 
 	React
 
 	React hooks
 	
 	React router
-	
-	React portal
 
 	Firebase
 	
