@@ -30,10 +30,6 @@
 
 	React
 
-	React hooks
-	
-	React router
-
 	Firebase
 	
 	Sass
