@@ -1,6 +1,7 @@
 import { Alert } from '@mui/material'
 import { useContext, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
+
 import { UserContext } from '../../store/UserContext'
 import LoadingPage from '../LoadingPage/LoadingPage'
 import logo from '../Nav/Netflix_Logo_RGB.png'

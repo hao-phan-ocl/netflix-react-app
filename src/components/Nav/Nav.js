@@ -1,9 +1,10 @@
-import logo from './Netflix_Logo_RGB.png'
 import { useContext, useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { AccountBox, ArrowDropDown, ArrowDropUp, Search } from '@material-ui/icons'
-import './Nav.scss'
+
+import logo from './Netflix_Logo_RGB.png'
 import { UserContext } from '../../store/UserContext'
+import './Nav.scss'
 
 export default function Nav() {
     const [atTopLevel, setAtTopLevel] = useState(false) 

@@ -1,4 +1,5 @@
 import { GitHub, LinkedIn } from '@material-ui/icons'
+
 import './Footer.scss'
 
 export default function Footer() {

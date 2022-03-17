@@ -1,4 +1,5 @@
 import { Info, InfoOutlined } from "@material-ui/icons"
+
 import useModal from "../../store/useModal"
 import Modal from "../Modal/Modal"
 

@@ -1,7 +1,7 @@
-import './Billboard.scss'
 import { requests } from '../../api/requests'
 import PlayButton from '../PlayButton/PlayButton'
 import InfoButton from '../InfoButton/InfoButton'
+import './Billboard.scss'
 
 export default function Billboard({ data }) {
     function truncate(string, num) {

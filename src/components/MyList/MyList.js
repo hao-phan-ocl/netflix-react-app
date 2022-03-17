@@ -1,5 +1,6 @@
 import { Container } from "@material-ui/core"
 import { useContext } from "react"
+
 import { UserContext } from "../../store/UserContext"
 import MovieCard from "../MovieCard/MovieCard"
 

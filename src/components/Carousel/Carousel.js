@@ -1,10 +1,11 @@
-import './Carousel.scss'
 import Slider from 'react-slick'
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from '@material-ui/icons'
+
 import { requests } from '../../api/requests'
 import useHasImage from '../../store/useHasImage'
 import PlayButton from '../PlayButton/PlayButton'
 import InfoButton from '../InfoButton/InfoButton'
+import './Carousel.scss'
 
 function SampleNextArrow(props) {
   const { onClick } = props
