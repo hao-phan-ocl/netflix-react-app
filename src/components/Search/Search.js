@@ -1,11 +1,12 @@
 import { Container } from "@material-ui/core"
 import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
+
 import { requests } from "../../api/requests"
 import MovieCard from '../MovieCard/MovieCard'
 import useFetch from "../../store/useFetch"
 import { UserContext } from "../../store/UserContext"
 import useHasImage from "../../store/useHasImage"
-import { useNavigate } from "react-router-dom"
 
 export default function Search() {
     const {searchText} = useContext(UserContext)

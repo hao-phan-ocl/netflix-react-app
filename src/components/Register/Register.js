@@ -1,10 +1,11 @@
 import { useContext, useRef, useState } from 'react'
-import logo from '../Nav/Netflix_Logo_RGB.png'
-import '../Login/Login.scss'
 import { Alert } from '@mui/material'
 import { useNavigate } from 'react-router'
+
+import logo from '../Nav/Netflix_Logo_RGB.png'
 import { UserContext } from '../../store/UserContext'
 import LoadingPage from '../LoadingPage/LoadingPage'
+import '../Login/Login.scss'
 
 export default function Register() {
     const [error, setError] = useState('')
