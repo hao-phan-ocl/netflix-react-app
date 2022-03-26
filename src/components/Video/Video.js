@@ -1,8 +1,8 @@
 import reactDom from 'react-dom'
 import ReactPlayer from 'react-player'
 
-import { requests } from '../../api/requests'
 import useFetch from '../../store/useFetch'
+import { requests } from '../../api/requests'
 import './Video.scss'
 
 export default function Video({data, setOpenVideo}) {
