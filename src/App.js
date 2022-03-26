@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from 'react-
 import { useContext } from 'react'
 
 import Search from './components/Search/Search'
-import { ContextProvider } from './store/UserContext'
-import { homeRequests, movieRequests, tvRequests } from './api/requests'
 import Login from './components/Login/Login'
 import Nav from './components/Nav/Nav'
 import Register from './components/Register/Register'
+import { ContextProvider } from './store/UserContext'
+import { homeRequests, movieRequests, tvRequests } from './api/requests'
 import { UserContext } from './store/UserContext'
 import MyList from './components/MyList/MyList'
 import Movies from './components/Page/Movies'
