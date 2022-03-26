@@ -1,7 +1,7 @@
 import { PlayArrow, PlayCircleFilled } from "@material-ui/icons";
 
-import useVideo from "../../store/useVideo";
 import Video from "../Video/Video";
+import useVideo from "../../store/useVideo";
 
 export default function PlayButton({buttonSize, data}) {
     const [openVideo, setOpenVideo] = useVideo()
