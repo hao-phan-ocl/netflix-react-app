@@ -3,8 +3,8 @@ import { Alert } from '@mui/material'
 import { useNavigate } from 'react-router'
 
 import logo from '../Nav/Netflix_Logo_RGB.png'
-import { UserContext } from '../../store/UserContext'
 import LoadingPage from '../LoadingPage/LoadingPage'
+import { UserContext } from '../../store/UserContext'
 import '../Login/Login.scss'
 
 export default function Register() {
