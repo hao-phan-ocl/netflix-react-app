@@ -3,9 +3,9 @@ import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { requests } from "../../api/requests"
+import { UserContext } from "../../store/UserContext"
 import MovieCard from '../MovieCard/MovieCard'
 import useFetch from "../../store/useFetch"
-import { UserContext } from "../../store/UserContext"
 import useHasImage from "../../store/useHasImage"
 
 export default function Search() {
