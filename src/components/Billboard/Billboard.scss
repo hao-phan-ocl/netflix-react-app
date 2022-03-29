@@ -1,148 +1,147 @@
 .billboard {
-    position: relative;
-    color: white;
+  position: relative;
+  color: white;
 
+  .banner {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+  }
+
+  .banner-shadow-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 10%, transparent);
+  }
+
+  .banner-shadow-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7.5rem;
+    background: linear-gradient(180deg, transparent, rgba(14, 14, 14, 0.6), #141414);
+  }
+
+  @media screen and (max-width: 1200px) {
     .banner {
-        width: 100%;
-        height: 90vh;
-        object-fit: cover;
+      height: 70vh;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .banner {
+      height: 60vh;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .banner {
+      height: 40vh;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .banner {
+      height: 30vh;
+    }
+  }
+
+  .info-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    top: 0;
+    bottom: 25%;
+    left: 4%;
+    width: 36%;
+
+    .movie-title {
+      color: white;
+      font-size: 3vw;
+      margin: 0.6rem 0;
+      text-shadow: #000 0 0 10px;
     }
 
-    .banner-shadow-top {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 5rem;
-        background-image: linear-gradient(180deg, rgba(0,0,0,.7) 10%, transparent);
+    .description {
+      font-size: 1.2vw;
+      font-weight: 400;
+      text-align: justify;
+      text-shadow: #000 0 0 10px;
     }
 
-    .banner-shadow-bottom {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 7.5rem;
-        background: linear-gradient(180deg, transparent, rgba(14,14,14,.6), #141414);
-    }
+    .button-box {
+      display: flex;
+      gap: 1rem;
 
-    @media screen and (max-width: 1200px) {
-        .banner {
-            height: 70vh;
-        }
-    }
-
-    @media screen and (max-width: 1000px) {
-        .banner {
-            height: 60vh;
-        }
-    }
-
-    @media screen and (max-width: 800px) {
-        .banner {
-            height: 40vh;
-        }
-    }
-
-    @media screen and (max-width: 500px) {
-        .banner {
-            height: 30vh;
-        }
-    }
-
-    .info-wrapper {
-        position: absolute;
+      button {
         display: flex;
-        align-items: flex-end;
-        top: 0;
-        bottom: 25%;
-        left: 4%;
-        width: 36%;
+        align-items: center;
+        padding: 0.6rem 2.2rem;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: clamp(0.7rem, 1.3vw, 1.7rem);
+        font-family: 'Open Sans', sans-serif;
+      }
 
-        .movie-title {
-            color: white;
-            font-size: 3vw;
-            margin: .6rem 0;
-            text-shadow: #000 0 0 10px;
+      .info {
+        color: white;
+        background-color: rgba(109, 109, 110, 0.9);
+      }
+
+      .icon {
+        margin-right: 1rem;
+        transform: scale(1.5);
+      }
+
+      @media screen and (max-width: 1500px) {
+        button {
+          padding: 0.5rem 1.8rem;
         }
 
-        .description {
-            font-size: 1.2vw;
-            font-weight: 400;
-            text-align: justify;
-            text-shadow: #000 0 0 10px;
+        .icon {
+          margin-right: 0.7rem;
+          transform: scale(1.4);
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        button {
+          padding: 0.5rem 1.3rem;
         }
 
-        .button-box {
-            display: flex;
-            gap: 1rem;
-            
-            button {
-                display: flex;
-                align-items: center;              
-                padding: 0.6rem 2.2rem;
-                border-radius: 5px;
-                font-weight: 500;
-                font-size: clamp(0.7rem, 1.3vw, 1.7rem);
-                font-family: 'Open Sans', sans-serif;
-            }
-
-            .info {
-                color: white;
-                background-color: rgba(109, 109, 110, 0.9);
-            }
-
-            .icon {
-                margin-right: 1rem;
-                transform: scale(1.5);
-            }
-
-            @media screen and (max-width: 1500px) {
-                button {
-                    padding: 0.5rem 1.8rem;
-                }
-
-                .icon {
-                    margin-right: .7rem;
-                    transform: scale(1.4);
-                }
-            }
-
-            @media screen and (max-width: 1200px) {
-                button {
-                    padding: 0.5rem 1.3rem;
-                }
-
-                .icon {
-                    margin-right: .7rem;
-                    transform: scale(1.2);
-                }
-            }
-
-            @media screen and (max-width: 800px) {
-                button {
-                    padding: 0.3rem 1rem;
-                    border-radius: 3px;
-                }
-
-                .icon {
-                    margin-right: .5rem;
-                    transform: scale(1);
-                }
-            }
-
-            @media screen and (max-width: 500px) {
-                button {
-                    padding: 0.2rem .7rem;
-                    border-radius: 3px;
-                }
-
-                .icon {
-                    margin-right: .2rem;
-                    transform: scale(.8);
-                }
-            }
+        .icon {
+          margin-right: 0.7rem;
+          transform: scale(1.2);
         }
-    } 
+      }
+
+      @media screen and (max-width: 800px) {
+        button {
+          padding: 0.3rem 1rem;
+          border-radius: 3px;
+        }
+
+        .icon {
+          margin-right: 0.5rem;
+          transform: scale(1);
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        button {
+          padding: 0.2rem 0.7rem;
+          border-radius: 3px;
+        }
+
+        .icon {
+          margin-right: 0.2rem;
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
 }
-
