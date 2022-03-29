@@ -1,43 +1,43 @@
 .movie-card {
-    cursor: pointer;
-    display: flex;
-    color: white;
-    align-items: center;
-    justify-content: center;
+  cursor: pointer;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+
+  .button-box {
+    display: none;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+  }
+
+  &:hover {
+    .image {
+      opacity: 0.3;
+    }
 
     .button-box {
-        display: none;
-    }
+      transform: scale(3.5);
+      display: block;
+      position: absolute;
 
-    .image {
-        width: 100%;
-        height: 100%;
-        border-radius: 7px;
-    }
+      .play {
+        margin-right: 5px;
 
-    &:hover {
-        .image {
-            opacity: .3;
+        &:hover {
+          opacity: 0.6;
         }
+      }
 
-        .button-box {
-            transform: scale(3.5);
-            display: block;
-            position: absolute;
-
-            .play {
-                margin-right: 5px;
-
-                &:hover {
-                    opacity: .6;
-                }
-            }
-
-            .info {
-                &:hover {
-                    opacity: .6;
-                }
-            }
+      .info {
+        &:hover {
+          opacity: 0.6;
         }
+      }
     }
+  }
 }
