@@ -1,115 +1,114 @@
 .login {
-    position: relative;
-    height: 100vh;
-    margin-bottom: 4rem;
+  position: relative;
+  height: 100vh;
+  margin-bottom: 4rem;
 
-    .banner {
-        width: 100%;
-        height: 100%;
-        opacity: .5;
-        object-fit: cover;
-    }
+  .banner {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    object-fit: cover;
+  }
 
-    .logo {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 200px;
-        padding-left: 20px;
-    }
+  .logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    padding-left: 20px;
+  }
 
-    .login-wrapper {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
+  .login-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login-table {
+      background-color: rgba($color: black, $alpha: 0.8);
+      padding: 60px 68px 40px;
+      min-height: 660px;
+
+      .login-form {
         display: flex;
-        justify-content: center;
-        align-items: center;
-    
-        .login-table {
-            background-color: rgba($color: black, $alpha: .8);
-            padding: 60px 68px 40px;
-            min-height: 660px;
+        flex-direction: column;
 
-            .login-form {
-                display: flex;
-                flex-direction: column;
-
-                h1 {
-                    font-size: 32px;
-                    color: white;
-                    margin-bottom: 28px;
-                    font-weight: 500;
-                }
-
-                .btn {
-                    width: 320px;
-                    border-radius: 4px;
-                    color: white;
-                    font-size: 18px;
-                    margin-bottom: 16px;
-                    background: #333;
-                    border: none;
-                    padding: 16px 20px;
-                }
-
-                .sign-in {
-                    margin-top: 16px;
-                    margin-bottom: 30px;
-                    background: #e50914;
-                }
-                
-                .text-box {
-                    display: flex;
-                    
-                    .text {
-                        margin: 0;
-                        font-size: 18px;
-                        color: gray;
-                        font-weight: 300;
-                    }
-    
-                    .light {
-                        cursor: pointer;
-                        margin-left: 10px;
-                        text-decoration: underline;
-                        color: white;
-                    }
-                }
-            }
-        }
-    }
-
-    @media screen and (max-width: 740px) {
-        .logo {
-            width: 160px;
-            padding: 0;
-        }
-
-        .banner {
-            display: none;
-        }
-
-        .login-table {
-            width: 100%;
-            padding: 0 5% !important;
+        h1 {
+          font-size: 32px;
+          color: white;
+          margin-bottom: 28px;
+          font-weight: 500;
         }
 
         .btn {
-            width: 100% !important;
+          width: 320px;
+          border-radius: 4px;
+          color: white;
+          font-size: 18px;
+          margin-bottom: 16px;
+          background: #333;
+          border: none;
+          padding: 16px 20px;
         }
 
-        .alert {
-            width: 100%;
+        .sign-in {
+          margin-top: 16px;
+          margin-bottom: 30px;
+          background: #e50914;
         }
+
+        .text-box {
+          display: flex;
+
+          .text {
+            margin: 0;
+            font-size: 18px;
+            color: gray;
+            font-weight: 300;
+          }
+
+          .light {
+            cursor: pointer;
+            margin-left: 10px;
+            text-decoration: underline;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 740px) {
+    .logo {
+      width: 160px;
+      padding: 0;
     }
 
-    @media screen and (max-width: 440px) {
-        .logo {
-            width: 100px;
-            padding: 0;
-        }
+    .banner {
+      display: none;
     }
+
+    .login-table {
+      width: 100%;
+      padding: 0 5% !important;
+    }
+
+    .btn {
+      width: 100% !important;
+    }
+
+    .alert {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 440px) {
+    .logo {
+      width: 100px;
+      padding: 0;
+    }
+  }
 }
-
