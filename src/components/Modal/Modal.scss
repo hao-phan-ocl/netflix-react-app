@@ -1,146 +1,145 @@
 .modal {
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    background-color: rgba($color: black, $alpha: .7);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba($color: black, $alpha: 0.7);
 
-    .modal-content {   
-        padding-bottom: 2rem;
-        margin: 4rem 2rem;
-        width: 850px;
-        border-radius: 10px;
-        overflow: hidden;
-        position: relative;
-        background-color: #181818;
+  .modal-content {
+    padding-bottom: 2rem;
+    margin: 4rem 2rem;
+    width: 850px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: #181818;
 
-        .close {
+    .close {
+      cursor: pointer;
+      position: absolute;
+      right: 1.5rem;
+      top: 1.5rem;
+      transform: scale(2);
+      color: rgb(194, 194, 194);
+      z-index: 10;
+
+      &:hover {
+        color: gray;
+      }
+    }
+
+    .banner-and-info {
+      position: relative;
+
+      .banner {
+        width: 100%;
+      }
+
+      .info-container {
+        position: absolute;
+        bottom: 10%;
+        left: 4%;
+        width: 40%;
+
+        .title {
+          color: white;
+          text-shadow: #000 0 0 10px;
+          font-size: 2.5rem;
+          margin: 1rem 0;
+        }
+
+        .button-box {
+          display: flex;
+          align-items: center;
+
+          button {
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            padding: 0.5rem 1.5rem;
+            margin-right: 2rem;
+            font-weight: 500;
+            font-size: 1.5rem;
+            font-family: 'Open Sans', sans-serif;
+
+            .icon {
+              margin-right: 0.5rem;
+              transform: scale(1.3);
+            }
+          }
+
+          .add {
             cursor: pointer;
-            position: absolute;
-            right: 1.5rem;
-            top: 1.5rem;
-            transform: scale(2);
-            color: rgb(194, 194, 194);
-            z-index: 10;
+            color: rgb(226, 226, 226);
+            transform: scale(2.3);
+            display: flex;
+            flex-direction: column;
+
+            .add-hover {
+              display: none;
+            }
 
             &:hover {
-                color: gray;
-            }
-        }
+              svg {
+                opacity: 0.7;
+              }
 
-        .banner-and-info {
-            position: relative;
-
-            .banner {
-                width: 100%;
-            }
-
-            .info-container {
+              .add-hover {
+                font-size: 0.6rem;
+                font-weight: 600;
+                padding: 3px;
+                color: black;
+                background-color: rgb(219, 219, 219);
+                display: flex;
                 position: absolute;
-                bottom: 10%;
-                left: 4%;
-                width: 40%;
-
-                .title {
-                    color: white;
-                    text-shadow: #000 0 0 10px;
-                    font-size: 2.5rem;
-                    margin: 1rem 0;
-                }
-
-                .button-box {
-                    display: flex;
-                    align-items: center;
-
-                    button {
-                        display: flex;
-                        align-items: center;
-                        border-radius: 5px;
-                        padding: .5rem 1.5rem;
-                        margin-right: 2rem;
-                        font-weight: 500;
-                        font-size: 1.5rem;
-                        font-family: 'Open Sans', sans-serif;
-
-                        .icon {
-                            margin-right: .5rem;
-                            transform: scale(1.3);
-                        }
-                    }
-
-                        .add {
-                            cursor: pointer;
-                            color: rgb(226, 226, 226);
-                            transform: scale(2.3);
-                            display: flex;
-                            flex-direction: column;
-
-                            .add-hover {
-                                display: none;
-                            }
-                                
-                            &:hover {
-                                svg {
-                                    opacity: .7;
-                                }
-
-                                .add-hover {
-                                    font-size: .6rem;
-                                    font-weight: 600;
-                                    padding: 3px;
-                                    color: black;
-                                    background-color: rgb(219, 219, 219);
-                                    display: flex;
-                                    position: absolute;
-                                    justify-content: center;
-                                    border-radius: 3px;
-                                    bottom: 1.8rem;
-                                    z-index: 999;
-                                }
-                            }
-                        }
-
-                    @media screen and (max-width: 560px) {
-                        button {
-                            font-size: 1.1rem;
-                            padding: .4rem 1rem;
-                            border-radius: 3px;
-                            margin-right: 1rem;
-                        }
-
-                        .add {
-                            color: white;
-                            transform: scale(2);
-                        }
-                    }
-
-                }
+                justify-content: center;
+                border-radius: 3px;
+                bottom: 1.8rem;
+                z-index: 999;
+              }
             }
+          }
+
+          @media screen and (max-width: 560px) {
+            button {
+              font-size: 1.1rem;
+              padding: 0.4rem 1rem;
+              border-radius: 3px;
+              margin-right: 1rem;
+            }
+
+            .add {
+              color: white;
+              transform: scale(2);
+            }
+          }
         }
-
-        .movie-info {
-            display: flex;
-            margin: .8rem 0;
-            padding: 0 2.5rem;
-            font-weight: 400;
-            font-size: 1.1rem;
-            line-height: 1.6;
-
-            .description {
-                width: 70%;
-                text-align: justify;
-                margin-right: 2rem;
-            }
-
-            .genres {
-                text-align: left;
-            }
-        }
+      }
     }
+
+    .movie-info {
+      display: flex;
+      margin: 0.8rem 0;
+      padding: 0 2.5rem;
+      font-weight: 400;
+      font-size: 1.1rem;
+      line-height: 1.6;
+
+      .description {
+        width: 70%;
+        text-align: justify;
+        margin-right: 2rem;
+      }
+
+      .genres {
+        text-align: left;
+      }
+    }
+  }
 }
