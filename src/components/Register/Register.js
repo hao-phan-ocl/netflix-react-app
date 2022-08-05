@@ -51,12 +51,14 @@ export default function Register() {
         <div className="login-table">
           <form className="login-form">
             <h1>Sign Up</h1>
-            <Alert severity="info" sx={{ mb: 2, width: '320px', fontSize: 16 }} className="alert">
-              Do not register with your real email. Use any random fake email instead.
+            <Alert severity="info" sx={{ mb: 2, width: '320px', fontSize: 14 }} className="alert">
+              This is
+              <b> NOT </b>
+              Netflix. Do not register with your real email. Use a fake email instead.
               <SentimentSatisfiedAltIcon />
             </Alert>
             <Alert severity="info" sx={{ mb: 2, width: '320px' }} className="alert">
-              <Typography m="0" paragraph fontSize="16px">
+              <Typography m="0" paragraph fontSize="14px" component="div">
                 <div>Or use a test account:</div>
                 <b>email: </b>
                 <span>test@gmail.com</span>
