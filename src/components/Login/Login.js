@@ -1,6 +1,7 @@
-import { Alert } from '@mui/material'
+import { Alert, Typography } from '@mui/material'
 import { useContext, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt'
 
 import { UserContext } from '../../store/UserContext'
 import LoadingPage from '../LoadingPage/LoadingPage'
@@ -45,6 +46,22 @@ export default function Login() {
         <div className="login-table">
           <form className="login-form">
             <h1>Sign In</h1>
+            <Alert severity="info" sx={{ mb: 2, width: '320px', fontSize: 16 }} className="alert">
+              Do not register with your real email. Use any random fake email instead.
+              <SentimentSatisfiedAltIcon />
+            </Alert>
+            <Alert severity="info" sx={{ mb: 2, width: '320px' }} className="alert">
+              <Typography m="0" paragraph fontSize="16px">
+                <div>Or use a test account:</div>
+                <b>email: </b>
+                <span>test@gmail.com</span>
+                <div></div>
+                <span>
+                  <b>password: </b>
+                </span>
+                <span>123456</span>
+              </Typography>
+            </Alert>
             {error && (
               <Alert
                 severity="error"
