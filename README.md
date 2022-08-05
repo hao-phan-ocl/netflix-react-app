@@ -1,6 +1,6 @@
 # Netflix Clone
 	
-	https://react-movies-app-867b0.web.app/
+	https://react-movies-app-867b0.firebaseapp.com/
 
 # Features
 
